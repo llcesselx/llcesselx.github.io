@@ -11,3 +11,6 @@ body {
     text-align: center;
     text-decoration-line: overline underline;
 }
+#imgChange:hover {
+    cursor: pointer;
+}
