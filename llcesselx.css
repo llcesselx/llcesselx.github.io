@@ -11,6 +11,10 @@ body {
     text-align: center;
     text-decoration-line: underline;
 }
+#imgChange {
+    border: 1px solid black;
+    border-radius: 20px;
+}
 #imgChange:hover {
     cursor: pointer;
 }

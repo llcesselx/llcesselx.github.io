@@ -2,8 +2,8 @@ function kittyClick() {
     console.log("Image clicked...")
 
     let existingImg = document.getElementById("imgChange");
-    let newKittyImg = 'src="https://placekitty.com/250/250"';
-    let newPuppyImg = 'src="https://place-puppy.com/250x250"';
+    let newKittyImg = "https://placekitty.com/250/250";
+    let newPuppyImg = "https://place-puppy.com/250x250";
 
     if (existingImg.src === "https://placekitty.com/250/250") {
         existingImg.src = newPuppyImg;
