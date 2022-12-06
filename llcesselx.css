@@ -9,7 +9,7 @@ body {
 .page-heading {
     position: static;
     text-align: center;
-    text-decoration-line: overline underline;
+    text-decoration-line: underline;
 }
 #imgChange:hover {
     cursor: pointer;
