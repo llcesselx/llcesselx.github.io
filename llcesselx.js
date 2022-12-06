@@ -8,7 +8,8 @@ function kittyClick() {
     if (existingImg.src === "https://placekitty.com/250/250") {
         existingImg.src = newPuppyImg;
     }
-    else {
+
+    if (existingImg.src === "https://place-puppy.com/250x250") {
         existingImg.src = newKittyImg;
     }
 }
