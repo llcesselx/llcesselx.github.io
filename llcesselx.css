@@ -3,13 +3,14 @@ body {
     border: 5px;
     padding: 5px;
 }
-.me {
-    position: relative;
-}
 .page-heading {
     position: static;
     text-align: center;
     text-decoration-line: underline;
+}
+.project-heading {
+    text-align: center;
+    border: 5px solid black;
 }
 #imgChange {
     border: 1px solid black;
