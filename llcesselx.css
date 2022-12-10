@@ -3,6 +3,13 @@ body {
     border: 5px;
     padding: 5px;
 }
+a {
+    color: black;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+}
 .project-heading {
     text-align: center;
     border: 5px solid black;
@@ -21,8 +28,9 @@ body {
 }
 .name-heading {
     position: absolute;
-    margin: 20px auto auto auto;
-    padding: 5px 350px 5px 20px;
+    padding: 5px 5px 5px 15px;
+    width: 100%;
+    overflow: auto;
     font-size: 32px;
     font-weight: bold;
     border: 5px solid black;
@@ -50,12 +58,15 @@ body {
     border-radius: 10px;
 }
 .projects-container {
-    border: 5px solid black;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+    padding-left: 15px;
+    padding-right: 10px;
     border-radius: 10px;
+    width: 100%;
+    overflow: auto;
 }
-.projects-link a {
-    color: black;
-}
-.projects-link a:visited {
-    color: black;
+.project-link {
+    border: 1px solid black;
 }
