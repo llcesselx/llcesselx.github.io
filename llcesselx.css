@@ -11,9 +11,7 @@ a:visited {
     color: black;
 }
 .navbar {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display: grid;
     justify-content: flex-end;
 }
 .navbar li {
@@ -24,13 +22,15 @@ a:visited {
 }
 .name-heading {
     position: absolute;
-    padding: 5px 5px 5px 15px;
-    width: 100%;
+    width: auto;
     overflow: auto;
     font-size: 32px;
     font-weight: bold;
-    border: 5px solid black;
     border-radius: 9px;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    border: 5px solid black;
+    padding: 5px 20px;
 }
 .resume-btn {
     border: 3px solid black;
@@ -38,6 +38,8 @@ a:visited {
     padding: 10px;
     border-radius: 7px;
     background-color: #343434;
+    grid-column-start: 10;
+    grid-column-end: 10;
 }
 .resume-btn a {
     color: #ffffff;
