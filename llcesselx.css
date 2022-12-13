@@ -10,10 +10,6 @@ a {
 a:visited {
     color: black;
 }
-.project-heading {
-    text-align: center;
-    border: 5px solid black;
-}
 .navbar {
     display: flex;
     flex-direction: row;
@@ -66,7 +62,4 @@ a:visited {
     border-radius: 10px;
     width: 100%;
     overflow: auto;
-}
-.project-link {
-    border: 1px solid black;
 }

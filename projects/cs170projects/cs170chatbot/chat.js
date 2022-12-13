@@ -5,8 +5,8 @@ const emojisAsText = [
     ":cat:",
 ]
 const emojisAsHtml = [
-    '<img class="emoji" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/34cade57-6b95-4ec6-95db-65ebf8f6016b/dbkhtvz-6f6405de-82f2-41bf-8958-1e329ef90dc9.png"/>',
-    '<img class="emoji" src="https://static.metafy.gg/uploads/store/collection_tag/6d0f7ef2-abe4-4a05-9159-b7355dce7de1/cutout/4e78443946555d39b1cced78aac77bbd.png"/>',
+    '<img class="emoji" alt="yuumi" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/34cade57-6b95-4ec6-95db-65ebf8f6016b/dbkhtvz-6f6405de-82f2-41bf-8958-1e329ef90dc9.png"/>',
+    '<img class="emoji" alt="pug-maw" src="https://static.metafy.gg/uploads/store/collection_tag/6d0f7ef2-abe4-4a05-9159-b7355dce7de1/cutout/4e78443946555d39b1cced78aac77bbd.png"/>',
 ]
 
 const ppAsText = [

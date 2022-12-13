@@ -43,26 +43,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-.correct {
-    background-color: darkgreen;
-    color: white;
-}
-
-.close {
-    background-color: goldenrod;
-    color: white;
-}
-
-.wrong {
-    background-color: #888;
-    color: white;
-}
-
-.invalid {
-    animation: flash 1s;
-}
-
 /* flashes red border and then fades back to gray */
 @keyframes flash {
     5% {
@@ -85,13 +65,6 @@ body {
         transform: rotate(360deg);
     }
 }
-
-/* visibility hidden means the item is still there and taking up space
-   but just not shown. display: none doesn't take up space */
-.hidden {
-    visibility: hidden;
-}
-
 .info-bar {
     display: flex;
     align-items: center;
@@ -139,8 +112,4 @@ body {
     91% {
         color: rgb(255, 0, 127);
     }
-}
-
-.winner {
-    animation: rainbow 4s infinite linear;
 }
