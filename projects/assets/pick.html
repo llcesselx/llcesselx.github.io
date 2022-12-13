@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pick a Card</title> 
+        <style>
+        title {
+            color: rgb(81, 48, 224)
+        }
+        body {
+            background-color: #1b1b1b ;
+            color: #ffffff ;
+        }
+        h1 {
+            text-align: center;
+            font-size: 40px;
+        }
+        h2 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        .cardFormat {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+            background-color: #ffffff;
+            border: #0b005e;
+            border-radius: 30px;
+        }
+        .button {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+            background-color: rgb(193, 193, 193);
+            color: #1b1b1b;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 5px 40px;
+        }
+        .button:hover {
+            background-color: black;
+            color: white;
+        }
+        </style>
+    </head>
+
+    <body>
+        <h1>Pick a card</h1>
+        <div id="stage">
+            <img id="card"
+            src="https://cs.indstate.edu/~lmay1/assets/cards/back.png"
+            class="cardFormat"
+            height="300px"
+            width="200px"
+            onclick="pickCard()"/>
+        </div>
+        <br>
+        <br>
+        <div id="control">
+            <button class="button" onclick="pickCard()">
+                Pick Card!
+            </button>
+        </div>
+        <div id="answer">
+            <h2>Question Answer: </h2>
+            <p>
+                I believe the reason for a card not changing into a new card is
+                the same reason the die would not change. It happens less frequently
+                here because there are 52 cards to get so you have a 1/52 chance to 
+                pick the same card but for a 6-sided dice, you have a 1/6 chance to
+                get the same number. 
+            </p>
+        </div>
+
+        <script>
+            function pickCard() {
+                let theCard= document.getElementById("card"); 
+                let num = shuffle();
+                let suit = pickSuit();
+
+                if (suit == 1){
+                    let cardSuit = "hearts";
+                }
+                else if (suit == 2) {
+                    let cardSuit = "diamonds";
+                }
+                else if (suit == 3) {
+                    let cardSuit = "clubs";
+                }
+                else {
+                    let cardSuit = "spades";
+                }
+
+                if (num == 1){
+                    num = "ace";
+                }
+                else if (num == 11) {
+                    num = "jack";
+                }
+                else if (num == 12) {
+                    num = "queen";
+                }
+                else if (num == 13) {
+                    num = "king";
+                }
+                else {
+                    num = num;
+                }
+
+                let cardURL= `https://cs.indstate.edu/~lmay1/assets/cards/${num}_of_${cardSuit}.png`
+                window.alert(cardSuit);
+                return;
+            }
+
+            function shuffle() {
+                num = Math.floor(Math.random()*13)+1;
+                return num;
+            }
+
+            function pickSuit() {
+                suit = Math.floor(Math.random()*4)+1;
+                return suit;
+            }
+
+        </script>
+    </body>
+</html>
