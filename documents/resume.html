@@ -3,8 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <title>Resume</title>
+    <style>
+body {
+    display: grid;
+    padding: 10px 20px;
+}
+li {
+    padding-bottom: 10px;
+}
+.page-title {
+    text-align: center;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    font-family: "Times New Roman";
+    font-size: 36px;
+    font-weight: bold;
+}
+.back-btn {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 5px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background: black;
+    color: white;
+}
+.linkedin {
+    text-align: center;
+    padding: 10px 5px;
+    grid-column-start: 8;
+    grid-column-end: 9;
+}
+.github {
+    text-align: center;
+    padding: 10px 5px;
+    grid-column-start: 9;
+    grid-column-end: 10;
+}
+.back-btn:hover {
+    cursor: pointer;
+}
+.linkedin:hover {
+    cursor: pointer;
+}
+.github:hover {
+    cursor: pointer;
+}
+.summary-heading {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 50px 20px 20px 0;
+}
+.summary {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.education-heading {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 50px 20px 20px 0;
+}
+.education {
+    grid-row-start: 7;
+    grid-row-end: 9;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 10px 10px 0;
+}
+.exp-heading {
+    grid-row-start: 10;
+    grid-row-end: 11;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 50px 20px 20px 0;
+}
+.exp {
+    grid-row-start: 11;
+    grid-row-end: 20;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 10px 10px 0;
+}
+.exp-entry {
+    padding: 10px;
+}
+.work-title {
+    font-weight: bold;
+}
+    </style>
 </head>
 <body>
-    <h1>Resume</h1>
+    <div class="back-btn" onclick="goBack()">Back</div>
+    <div class="page-title">Resume</div>
+    <div class="linkedin" onclick="linkedin()">LinkedIn</div>
+    <div class="github">Github</div>
+    <div class="summary-heading" onclick="github()">Summary</div>
+    <div class="summary">
+        I am currently a full time student at Indiana State University majoring
+        in Computer Engineering and minoring in both Computer Science and Automation
+        Engineering Technology. I am enthusiastic about my studies and about my
+        future career.
+    </div>
+    <div class="education-heading">Education</div>
+    <div class="education">
+        <ul>
+            <li>Currently pursuing B.S. in Computer Engineering | Minors: Computer Science, Automation Engineering Technology | Indiana State University | Terre Haute, IN</li>
+            <li>A.S. in Information Systems and Technology | San Bernardino Valley College | San Bernardino, CA</li>
+        </ul>
+    </div>
+    <div class="exp-heading">Experience</div>
+    <div class="exp">
+        <div class="exp-entry">
+            <div class="work-title">Data Center Operator | Indiana State University | September 2022 - Present</div>
+            <ul>
+                <li>Support production operations, run backups and main asset information</li>
+                <li>Operate computer systems, monitor computer and network systems</li>
+                <li>Monitor university network for security threats</li>
+                <li>Perform monthly vulnerability scans and generate reports for the CISO</li>
+            </ul>
+            <div class="work-title">Computer Technician I | Indiana State University | May 2022 - October 2022</div>
+            <ul>
+                <li>Assist customers in person, or via phone/email with technical issues and OIT services</li>
+                <li>Troubleshoot and repair computer issues</li>
+                <li>Download and install appropriate software and drivers for university machines</li>
+            </ul>
+            <div class="work-title">Broadband Technician | Sparklight | January 2022 - May 2022</div>
+            <ul>
+                <li>Performed commercial and residential internet installations, completed repairs,
+                terminated service, and relocated existing equipment</li>
+                <li>Install Hitron extenders via Cat5e and wiring to T-865B standards</li>
+                <li>Troubleshoot computer, IoT and peripheral device connectivity issues</li>
+                <li>Used electronic test equipment and online diagnostic tools to troubleshoot
+                customer service drops or outlets, diagnosed and repaired reception performance
+                issues, and resolved all problems from the customer-owned equipment to the output of the
+                first network tap</li>
+                <li>Assured proper upstream and downstream signal levels at each termination on customer premesis</li>
+                <li>Performed after-hour network stand-by, troubleshooting and repair</li>
+                <li>Educated customers as to the proper operation of all services, equipment, modems
+                , routers, and customer-owned equipment</li>
+            </ul>
+            <div class="work-title">Interior Electrician - Soldier | U.S. Army | July 2017 - December 2019</div>
+            <ul>
+                <li>Ensured safety and welfare of a 8 man team</li>
+                <li>Performed repairs and maintenance on electrical systems needed for mission success</li>
+                <li>Performed maintenance and conducted preventative measures to vehicles and equipment</li>
+                <li>Deployed in support of Operation Faithful Patriot under joint operations with the Department of Homeland Security from October 2018 to December 2018</li>
+                <li>Graduated basic combat training and advanced individual training with Sapper Spirit award for outstanding achievement</li>
+            </ul>
+            <div class="work-title">Tire Technician | Costco Wholesale | April 2016 - April 2017</div>
+            <ul>
+                <li>Diagnosed problems relating to customers tires</li>
+                <li>Influenced tire sales to customers based on their individual needs</li>
+                <li>Repaired flat tires caused by penetrating objects in the tire wall</li>
+            </ul>
+            <div class="work-title">Cashier | Costco Wholesale | April 2013 - March 2016</div>
+            <ul>
+                <li>Promoted Costco executive membership to customers resulting in membership upgrades at the point of sale</li>
+                <li>Spoke with customers regarding their experience and held a high standard to customer service needs</li>
+                <li>Handled money at the point of sale resulting in $0.00 register overages and shortages</li>
+                <li>Accurate item scanning resulting in less than .1% of items being audited while maintaining a high items per minute scan, 77+</li>
+            </ul>
+            <div class="work-title">Front End Assistant | Costco Wholesale | September 2012 - April 2013</div>
+            <ul>
+                <li>Stocked merchandise using first in, first out (FIFO) procedures like a stack</li>
+                <li>Maintained cleanliness of warehouse sales floor, bay areas and restrooms</li>
+                <li>Improved customer satisfaction with loading and unloading customers in need of help to and from their vehicles</li>
+            </ul>
+        </div>
+    </div>
+<script>
+    function goBack() {
+        console.log("Going to home page....")
+        window.location = "https://www.leatice.tech"
+    }
+    function linkedin() {
+        console.log("Going to linkedin...")
+        window.location = "https://www.linkedin.com/in/lea-tice"
+    }
+    function github() {
+        console.log("Going to Github....")
+        window.location = "https://www.github.com/llcesselx"
+    }
+</script>
 </body>
 </html>
