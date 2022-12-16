@@ -7,13 +7,16 @@
 body {
     display: grid;
     padding: 10px 20px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    column-gap: 10px;
 }
 li {
     padding-bottom: 10px;
 }
 .page-title {
     text-align: center;
-    grid-column-start: 4;
+    grid-column-start: 5;
     grid-column-end: 6;
     font-family: "Times New Roman";
     font-size: 36px;
@@ -25,7 +28,7 @@ li {
     border-radius: 10px;
     padding: 10px 5px;
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 3;
     background: black;
     color: white;
 }
@@ -43,12 +46,16 @@ li {
 }
 .back-btn:hover {
     cursor: pointer;
+    background: white;
+    color: black;
 }
 .linkedin:hover {
     cursor: pointer;
+    color: #001ac7;
 }
 .github:hover {
     cursor: pointer;
+    color: #8c8c8c;
 }
 .summary-heading {
     grid-row-start: 2;
