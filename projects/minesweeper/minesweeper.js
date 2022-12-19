@@ -151,3 +151,7 @@ function getId() {
         document.getElementById("sq-56").innerHTML = "1";
     }
 }
+
+function goBack() {
+    window.location = "https://leatice.tech"
+}

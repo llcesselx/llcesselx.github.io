@@ -23,6 +23,27 @@ body {
     grid-row-end: 1;
     text-align: center;
 }
+.back-btn {
+    height: 20px;
+    text-align: center;
+    vertical-align: text-bottom;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background: black;
+    color: white;
+}
+.back-btn:hover {
+    height: 20px;
+    text-align: center;
+    vertical-align: text-bottom;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: #545454;
+    color: black;
+}
 .game-desc {
     grid-column-start: 2;
     grid-column-end: 10;
