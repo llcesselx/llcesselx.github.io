@@ -17,11 +17,21 @@ body {
 .page-heading {
     font-size: 36px;
     font-weight: bold;
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-column-end: 10;
     grid-row-start: 1;
     grid-row-end: 1;
     text-align: center;
+}
+.game-desc {
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 8;
+    grid-row-end: 8;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
 }
 /*
 CSS for individual mine squares
