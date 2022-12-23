@@ -1,0 +1,72 @@
+body {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr 1fr 1fr 1fr;
+}
+.page-heading {
+    font-size: 36px;
+    font-weight: bold;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    justify-self: center;
+    margin: 5px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.program-one {
+    margin: 5px;
+    padding: 10px 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: left;
+    vertical-align: bottom;
+}
+.diet-plan {
+    font-weight: normal;
+    font-size: 18px;
+    padding: 15px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+    vertical-align: bottom;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.diet-plan:hover {
+    cursor: pointer;
+}
+.workout-plan {
+    font-weight: normal;
+    font-size: 18px;
+    padding: 10px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+    vertical-align: bottom;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.workout-plan:hover {
+    cursor: pointer;
+}
+.back-btn {
+    position: absolute;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+.back-btn:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
+}
