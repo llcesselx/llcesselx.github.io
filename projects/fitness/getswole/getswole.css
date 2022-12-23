@@ -1,33 +1,38 @@
 body {
     display: grid;
     padding: 20px;
+    background: #bebebe;
 }
 .phase {
     display: none;
     outline: 1px solid black;
     padding: 10px;
+    background: #676767;
 }
 .day {
     display: none;
-    outline: 1px solid black;
+    outline: 1px solid #00ad14;
     padding: 10px;
+    background: #000000;
 }
 .workout {
     grid-column-start: 1;
     grid-column-end: 2;
     padding: 10px;
-    outline: 1px solid black;
+    outline: 1px solid #00ad14;
+    background: white;
 }
 .sets {
     grid-column-start: 2;
     grid-column-end: 3;
     padding: 10px;
-    outline: 1px solid black;
+    outline: 1px solid #00ad14;
+    background: white;
 }
 .collapsible {
     margin-top: 15px;
-     background-color: #eee;
-     color: #444;
+     background-color: #ffffff;
+     color: #000000;
      cursor: pointer;
      padding: 10px;
      width: 100%;
@@ -37,5 +42,20 @@ body {
      font-size: 15px;
  }
 .active, .collapsible:hover {
-    background-color: #ccc;
+    background-color: #000000;
+    color: #00ad14;
+}
+.back-btn {
+    position: static;
+    margin: 10px auto 15px 10px;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+.back-btn:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
 }

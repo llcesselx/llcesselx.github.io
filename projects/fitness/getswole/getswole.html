@@ -8,6 +8,9 @@
     <title>MPs Get Swole</title>
 </head>
 <body>
+<div class="back-btn">
+    Back
+</div>
 ** SS: Superset - A superset is a back-to-back grouping of your sets, alternating, with no rest in-between
 <br/>
 <br/>
@@ -557,21 +560,26 @@
     </div>
 
     <button type="button" class="collapsible">Day 7: Rest + Recover</button>
+</div>
 <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "grid") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "grid";
-            }
-        });
-    }
-</script>
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "grid") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "grid";
+                }
+            });
+        }
+
+        function goBack() {
+            window.location = "https://www.leatice.tech/projects/fitness/fitness.html"
+        }
+    </script>
 </body>
 </html>
