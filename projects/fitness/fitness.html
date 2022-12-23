@@ -10,7 +10,7 @@
 <body>
     <div class="back-btn" onclick="goBack()">Back</div>
     <div class="page-heading">Fitness Programs</div>
-    <div class="program-one">Get Swole</div>
+    <div class="program-one" onclick="getSwolePDF()">Get Swole</div>
     <div class="diet-plan">Diet Plan</div>
     <div class="workout-plan" onclick="loadGetSwole()">Workout Plan</div>
     <script>
@@ -19,6 +19,9 @@
         }
         function loadGetSwole() {
             window.location = "https://www.leatice.tech/projects/fitness/getswole/getswole.html";
+        }
+        function getSwolePDF() {
+            window.location = "https://www.leatice.tech/projects/fitness/guides/getswole.pdf"
         }
     </script>
 </body>

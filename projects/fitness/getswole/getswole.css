@@ -1,0 +1,41 @@
+body {
+    display: grid;
+    padding: 20px;
+}
+.phase {
+    display: none;
+    outline: 1px solid black;
+    padding: 10px;
+}
+.day {
+    display: none;
+    outline: 1px solid black;
+    padding: 10px;
+}
+.workout {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 10px;
+    outline: 1px solid black;
+}
+.sets {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 10px;
+    outline: 1px solid black;
+}
+.collapsible {
+    margin-top: 15px;
+     background-color: #eee;
+     color: #444;
+     cursor: pointer;
+     padding: 10px;
+     width: 100%;
+     border: none;
+     text-align: center;
+     outline: 1px solid black;
+     font-size: 15px;
+ }
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
