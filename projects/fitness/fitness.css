@@ -2,9 +2,10 @@ body {
     display: grid;
     grid-auto-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: 1fr 1fr 1fr 1fr;
+    background: #222831;
 }
 .page-heading {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: bold;
     grid-column-start: 1;
     grid-column-end: 4;
@@ -13,43 +14,64 @@ body {
     justify-self: center;
     margin: 5px;
     padding: 15px;
-    border: 1px solid black;
+    border: 5px solid #393e46;;
     border-radius: 10px;
+    background: #eeeeee;
+    color: #222831;
 }
 .program-one {
-    margin: 5px;
     padding: 10px 10px 20px;
     font-size: 24px;
     font-weight: bold;
-    grid-row-start: 2;
-    grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 2;
-    justify-self: center;
+    justify-self: right;
     vertical-align: bottom;
+    border: 5px solid #393e46;;
+    border-radius: 10px;
+    background: #0092ca;
+    width: 125px;
+    height: 20px;
+    text-align: center;
+    color: #222831;
+}
+.program-one:hover {
+    cursor: pointer;
 }
 .diet-plan {
-    font-weight: normal;
+    font-weight: bold;
     font-size: 18px;
     padding: 15px;
     grid-column-start: 2;
     grid-column-end: 3;
-    justify-items: center;
+    justify-self: center;
     vertical-align: bottom;
-    border: 1px solid black;
+    border: 5px solid #393e46;;
+    border-radius: 10px;
+    background: #eeeeee;
+    width: 125px;
+    height: 20px;
+    text-align: center;
+    color: #222831;
 }
 .diet-plan:hover {
     cursor: pointer;
 }
 .workout-plan {
-    font-weight: normal;
+    font-weight: bold;
     font-size: 18px;
-    padding: 10px;
+    padding: 15px;
     grid-column-start: 3;
     grid-column-end: 4;
-    justify-items: center;
+    justify-self: left;
     vertical-align: bottom;
-    border: 1px solid black;
+    border: 5px solid #393e46;
+    border-radius: 10px;
+    background: #eeeeee;
+    width: 125px;
+    height: 20px;
+    text-align: center;
+    color: #222831;
 }
 .workout-plan:hover {
     cursor: pointer;

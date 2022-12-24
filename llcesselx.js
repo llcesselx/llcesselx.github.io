@@ -13,3 +13,10 @@ function kittyClick() {
         existingImg.src = newKittyImg;
     }
 }
+
+function linkedIn() {
+    window.location = "https://www.linkedin.com/in/lea-tice";
+}
+function gitHub() {
+    window.location = "https://www.github.com/llcesselx";
+}
