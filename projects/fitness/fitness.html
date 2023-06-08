@@ -16,9 +16,15 @@
     <div class="program-one" onclick="getHwpoPDF()">HWPO</div>
     <div class="diet-plan" onclick="loadHwpoDiet()">Diet Plan</div>
     <div class="workout-plan" onclick="loadHwpo()">Workout Plan</div>
-    <div class="program-one" onclick="loadDT()">WotD DT</div>
+    <div class="crossfitlevel">Crossfit lvl 1</div>
+    <div class="guide" onclick="window.open('../fitness/wotd/lvl1/trainingguide.pdf', '_blank', 'fullscreen=yes'); return">Training Guide</div>
+    <div class="handbook" onclick="window.open('../fitness/wotd/lvl1/parthandbook.pdf', '_blank', 'fullscreen=yes'); return">Participant Handbook</div>
+    <div class="program-one" onclick="loadDT()">DT</div>
     <div class="diet-plan">N/A </div>
     <div class="workout-plan" onclick="loadDT()">Workout Plan</div>
+    <div class="program-one" onclick="loadLinda()">Linda</div>
+    <div class="diet-plan">N/A </div>
+    <div class="workout-plan" onclick="loadLinda()">Workout Plan</div>
 
 
     <script>
@@ -45,6 +51,9 @@ function getHwpoPDF() {
 }
 function loadDT() {
     window.location = "https://www.leatice.tech/projects/fitness/wotd/dt.html";
+}
+function loadLinda() {
+    window.location = "https://www.leatice.tech/projects/fitness/wotd/linda.html";
 }
     </script>
 </body>

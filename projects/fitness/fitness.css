@@ -118,3 +118,57 @@ hr {
     background: white;
     color: black;
 }
+.guide {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+    vertical-align: bottom;
+    border: 5px solid #393e46;;
+    border-radius: 10px;
+    background: #bebebe;
+    width: 125px;
+    height: 20px;
+    text-align: center;
+    color: #222831;
+}
+.guide:hover {
+    cursor: pointer;
+}
+.handbook {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: left;
+    vertical-align: bottom;
+    border: 5px solid #393e46;
+    border-radius: 10px;
+    background: #bebebe;
+    width: 125px;
+    height: 20px;
+    text-align: center;
+    color: #222831;
+}
+.handbook:hover {
+    cursor:pointer;
+}
+.crossfitlevel {
+    padding: 10px 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: right;
+    vertical-align: bottom;
+    border: 5px solid #393e46;;
+    border-radius: 10px;
+    background: #bebebe;
+    width: 125px;
+    height: 20px;
+    text-align: center;
+    color: #222831;
+}
