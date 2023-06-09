@@ -39,13 +39,11 @@
     }
     function setscore() {
         const input = document.getElementById("userInput").value;
-        const d = new Date();
-        d.setTime(d.getTime())
-        document.cookie = "score=" + encodeURIComponent(input)+"; max-age=" + 365*24*60*60;
+        document.cookie = "score=" + input +"; sameSite=Lax; max-age=" + 365*24*60*60 + ";";
         alert(input);
     }
-    function getscore() {
-        let score = "score=";
+    function getscore(score) {
+        let sc = "score=";
         let decodedCookie = decodeURIComponent(document.cookie);
         let ca = decodedCookie.split(";");
         for (let i = 0; i < ca.length; i++) {
@@ -60,6 +58,9 @@
             }
         }
         return "";
+    }
+    function loadscore() {
+        return getscore();
     }
 </script>
 </html>
