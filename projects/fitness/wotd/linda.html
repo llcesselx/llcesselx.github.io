@@ -42,7 +42,7 @@
     function back(){
         window.location = "https://leatice.tech/projects/fitness/fitness.html"
     }
-    function setlindascore() {
+    function setscore() {
         const input = document.getElementById("userInput").value;
         document.cookie = "lindascore=" + input +"; sameSite=Lax; max-age=" + 365*24*60*60 + ";";
         alert(input);
