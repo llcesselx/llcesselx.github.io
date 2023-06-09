@@ -48,12 +48,12 @@
         let ca = decodedCookie.split(";");
         for (let i = 0; i < ca.length; i++) {
             let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substiring(1);
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
             }
-            if (c.indexOf(score) === 0) {
-                const oldscore = c.substring(score.length, c.length)
-                document.getElementByID("prevScore").innerHTML = oldscore;
+            if (c.indexOf(sc) === 0) {
+                const oldscore = c.substring(sc.length, c.length)
+                document.getElementById("prevScore").innerHTML = oldscore;
                 return c.substring(score.length, c.length);
             }
         }
