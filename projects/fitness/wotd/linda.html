@@ -11,7 +11,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="getlindascore()">
 <div class="back-btn" onclick="back()">Back</div>
 <div class="page-heading">Linda</div>
 <div class="program-one">10-9-8-7-6-5-4-3-2-1</div>
@@ -42,13 +42,13 @@
     function back(){
         window.location = "https://leatice.tech/projects/fitness/fitness.html"
     }
-    function setscore() {
+    function setlindascore() {
         const input = document.getElementById("userInput").value;
-        document.cookie = "score=" + input +"; sameSite=Lax; max-age=" + 365*24*60*60 + ";";
+        document.cookie = "lindascore=" + input +"; sameSite=Lax; max-age=" + 365*24*60*60 + ";";
         alert(input);
     }
-    function getscore(score) {
-        let sc = "score=";
+    function getlindascore(score) {
+        let sc = "lindascore=";
         let decodedCookie = decodeURIComponent(document.cookie);
         let ca = decodedCookie.split(";");
         for (let i = 0; i < ca.length; i++) {
@@ -57,15 +57,11 @@
                 c = c.substring(1);
             }
             if (c.indexOf(sc) === 0) {
-                const oldscore = c.substring(sc.length, c.length)
-                document.getElementById("prevScore").innerHTML = oldscore;
+                document.getElementById("prevScore").innerHTML = c.substring(sc.length, c.length);
                 return c.substring(score.length, c.length);
             }
         }
         return "";
-    }
-    function loadscore() {
-        return getscore();
     }
 </script>
 </html>
