@@ -54,7 +54,8 @@
                 c = c.substiring(1);
             }
             if (c.indexOf(score) === 0) {
-                document.getElementByID("prevScore").innerHTML = c.substring(score.length, c.length)
+                var oldscore = c.substring(score.lenth, c.length)
+                document.getElementByID("prevScore").innerHTML = oldscore;
                 return c.substring(score.length, c.length);
             }
         }
