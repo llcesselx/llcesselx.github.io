@@ -38,7 +38,7 @@
         window.location = "https://leatice.tech/projects/fitness/fitness.html"
     }
     function setscore() {
-        var input = document.getElementById("userInput").value;
+        const input = document.getElementById("userInput").value;
         const d = new Date();
         d.setTime(d.getTime())
         document.cookie = "score=" + encodeURIComponent(input)+"; max-age=" + 365*24*60*60;
@@ -54,7 +54,7 @@
                 c = c.substiring(1);
             }
             if (c.indexOf(score) === 0) {
-                var oldscore = c.substring(score.lenth, c.length)
+                const oldscore = c.substring(score.length, c.length)
                 document.getElementByID("prevScore").innerHTML = oldscore;
                 return c.substring(score.length, c.length);
             }
