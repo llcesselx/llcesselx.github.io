@@ -174,7 +174,8 @@ hr {
 }
 .scorecard {
     position: absolute;
-    bottom: 15px;
+    right: 15px;
+    bottom: 20px;
     justify-self: center;
 }
 .prevScore {

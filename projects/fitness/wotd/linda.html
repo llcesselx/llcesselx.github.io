@@ -26,6 +26,17 @@
 <div class="container">
     <img class="image" src="images/lparker2.jpg" alt="luke Parker hang cleaning"/>
 </div>
+<div class="scorecard">
+    <form id="dt" onsubmit="return false;">
+        <input style="top:80%; left:5%; width:40%; " type="text" placeholder="Enter Score" id="userInput"/>
+        <input style="top:50%; left:5%; width: 40%;" type="submit" onclick="setscore()"/>
+    </form>
+    <div>
+        <p class="prevScore">
+            Previous Score:  <span id="prevScore"></span>
+        </p>
+    </div>
+</div>
 </body>
 <script>
     function back(){
