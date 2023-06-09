@@ -172,3 +172,11 @@ hr {
     text-align: center;
     color: #222831;
 }
+.scorecard {
+    position: absolute;
+    bottom: 15px;
+    justify-self: center;
+}
+.prevScore {
+    color: white;
+}

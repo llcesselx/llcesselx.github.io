@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../fitness.css"/>
     <title>DT</title>
 </head>
-<body>
+<body onload="getscore()">
     <div class="back-btn" onclick="back()">Back</div>
     <div class="page-heading">DT</div>
     <div class="program-one">5 rounds</div>
@@ -21,10 +21,44 @@
     <div class="container">
         <img class="image" src="images/lparker.jpg" alt="luke Parker hang cleaning"/>
     </div>
+    <div class="scorecard">
+        <form id="dt" onsubmit="return false;">
+            <input style="top:80%; left:5%; width:40%; " type="text" placeholder="Enter Score" id="userInput"/>
+            <input style="top:50%; left:5%; width: 40%;" type="submit" onclick="setscore()"/>
+        </form>
+        <div>
+            <p class="prevScore">
+                Previous Score:  <span id="prevScore"></span>
+            </p>
+        </div>
+    </div>
 </body>
 <script>
     function back(){
         window.location = "https://leatice.tech/projects/fitness/fitness.html"
+    }
+    function setscore() {
+        var input = document.getElementById("userInput").value;
+        const d = new Date();
+        d.setTime(d.getTime())
+        document.cookie = "score=" + encodeURIComponent(input)+"; max-age=" + 365*24*60*60;
+        alert(input);
+    }
+    function getscore() {
+        let score = "score=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substiring(1);
+            }
+            if (c.indexOf(score) === 0) {
+                document.getElementByID("prevScore").innerHTML = c.substring(score.length, c.length)
+                return c.substring(score.length, c.length);
+            }
+        }
+        return "";
     }
 </script>
 </html>
