@@ -42,5 +42,30 @@
     function back(){
         window.location = "https://leatice.tech/projects/fitness/fitness.html"
     }
+    function setscore() {
+        const input = document.getElementById("userInput").value;
+        document.cookie = "score=" + input +"; sameSite=Lax; max-age=" + 365*24*60*60 + ";";
+        alert(input);
+    }
+    function getscore(score) {
+        let sc = "score=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(sc) === 0) {
+                const oldscore = c.substring(sc.length, c.length)
+                document.getElementById("prevScore").innerHTML = oldscore;
+                return c.substring(score.length, c.length);
+            }
+        }
+        return "";
+    }
+    function loadscore() {
+        return getscore();
+    }
 </script>
 </html>
