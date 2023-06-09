@@ -24,12 +24,13 @@
 <div class="program-one">95/65lb</div>
 <div class="workout-plan">Overhead Squat</div>
 <div class="container">
-  <img class="image" src="images/lparker3.jpg"/>
+  <img class="image" src="images/lparker3.jpg" alt="lukeparkerrings"/>
 </div>
 <div class="scorecard">
   <form id="dt" onsubmit="return false;">
     <input style="top:80%; left:5%; width:40%; " type="text" placeholder="Enter Score" id="userInput"/>
-    <input style="top:50%; left:5%; width: 40%;" type="submit" onclick="setscore()"/>
+    <label for="userInput"></label>
+    <input style="top:50%; left:5%; width: 40%;" type="submit" onclick="setcindyscore()"/>
   </form>
   <div>
     <p class="prevScore">
@@ -42,7 +43,7 @@
   function back(){
     window.location = "https://leatice.tech/projects/fitness/fitness.html"
   }
-  function setscore() {
+  function setcindyscore() {
     const input = document.getElementById("userInput").value;
     document.cookie = "cindyscore=" + input +"; sameSite=Lax; max-age=" + 365*24*60*60 + ";";
     alert(input);
