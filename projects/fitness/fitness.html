@@ -10,12 +10,9 @@
 <body>
     <div class="back-btn" onclick="goBack()">Back</div>
     <div class="page-heading">Fitness Programs</div>
-    <div class="program-one" onclick="getSwolePDF()">Get Swole</div>
+    <div class="program-one" onclick="getSwolePDF()">BB.com</div>
     <div class="diet-plan" onclick="loadGetSwoleDiet()">Diet Plan</div>
     <div class="workout-plan" onclick="loadGetSwole()">Workout Plan</div>
-    <div class="program-one" onclick="getHwpoPDF()">HWPO</div>
-    <div class="diet-plan" onclick="loadHwpoDiet()">Diet Plan</div>
-    <div class="workout-plan" onclick="loadHwpo()">Workout Plan</div>
     <div class="crossfitlevel">Crossfit lvl 1</div>
     <div class="guide" onclick="window.open('../fitness/wotd/lvl1/trainingguide.pdf', '_blank', 'fullscreen=yes'); return">Training Guide</div>
     <div class="handbook" onclick="window.open('../fitness/wotd/lvl1/parthandbook.pdf', '_blank', 'fullscreen=yes'); return">Participant Handbook</div>
@@ -42,15 +39,6 @@ function loadGetSwoleDiet() {
 }
 function getSwolePDF() {
     window.location = "https://www.leatice.tech/projects/fitness/guides/getswole.pdf"
-}
-function loadHwpo() {
-    window.location = "https://www.leatice.tech/projects/fitness/hwpo/hwpo.html";
-}
-function loadHwpoDiet() {
-    window.location = "https://www.leatice.tech/projects/fitness/hwpo/hwpo-diet.html";
-}
-function getHwpoPDF() {
-    window.location = "https://www.leatice.tech/projects/fitness/guides/hwpo.pdf";
 }
 function loadDT() {
     window.location = "https://www.leatice.tech/projects/fitness/wotd/dt.html";
