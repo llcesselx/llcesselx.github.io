@@ -8,7 +8,7 @@
 <body onload="appendData()">
     <div id="myData"></div>
 <script>
-    
+
     fetch("/wotd.json")
         .then(function (response) {
             return response.json();

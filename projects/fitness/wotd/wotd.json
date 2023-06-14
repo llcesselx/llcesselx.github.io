@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "0",
     "name": "murph",
     "mode": "for time",
     "exercises": [
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "id": "2",
+    "id": "1",
     "name": "linda",
     "mode": "for time",
     "reps": "10-9-8-7-6-5-4-3-2-1",
@@ -37,7 +37,7 @@
     ]
   },
   {
-    "id": "3",
+    "id": "2",
     "name": "DT",
     "mode": "for time",
     "reps": "5 rounds",
@@ -55,7 +55,7 @@
     ]
   },
   {
-    "id": "4",
+    "id": "3",
     "name": "Fran",
     "mode": "for time",
     "reps": "21-15-9",
