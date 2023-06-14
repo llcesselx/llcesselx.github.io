@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACFT</title>
+    <link rel="stylesheet" href="../fitness.css"/>
+    <link rel="icon" href="images/crossfitlogo.png"/>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 7;
+            grid-template-rows: 7;
+            background-color: white;
+        }
+        .heading {
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-row-start: 1;
+            grid-row-end: 1;
+            font-size: xxx-large;
+            justify-self: center;
+            padding: 15px 60px;
+            border: solid black 5px;
+            border-radius: 10px;
+            margin: 15px;
+        }
+        .exercise-block{
+            border: solid black 5px;
+            padding: 10px;
+            border-radius: 10px;
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-row-start: 2;
+            grid-row-end: 7;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .break {
+            flex-basis: 100%;
+            height: 0;
+        }
+        .rest {
+            margin: 15px;
+        }
+        .exercise {
+            padding: 15px 20px;
+            font-weight: bolder;
+            font-size: 24px;
+        }
+        .exercisetime {
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="back-btn" onclick="goBack()">
+        Back
+    </div>
+    <div class="heading">
+        ACFT
+    </div>
+    <div class="exercise-block">
+        <div class="exercise">
+            1. 3-rep-max Deadlift
+        </div>
+        <div class="exercisetime">
+            5 Minutes
+        </div>
+        <div class="break"></div>
+        <div class="rest">
+            REST 2 MINUTES
+        </div>
+        <div class="break"></div>
+        <div class="exercise">
+            2. Standing Power Throw
+        </div>
+        <div class="exercisetime">
+            For Distance
+        </div>
+        <div class="break"></div>
+        <div class="rest">
+            REST 3 MINUTES
+        </div>
+        <div class="break"></div>
+        <div class="exercise">
+            3. Hand-Release Push-Ups
+        </div>
+        <div class="exercisetime">
+            2 Minutes
+        </div>
+        <div class="break"></div>
+        <div class="rest">
+            REST 3 MINUTES
+        </div>
+        <div class="break"></div>
+        <div class="exercise">
+            4. Sprint, Drag, Carry
+        </div>
+        <div class="exercisetime">
+            For Time
+        </div>
+        <div class="break"></div>
+        <div class="rest">
+            REST 4 MINUTES
+        </div>
+        <div class="break"></div>
+        <div class="exercise">
+            5. Max Plank Hold
+        </div>
+        <div class="exercisetime">
+            For Time
+        </div>
+        <div class="break"></div>
+        <div class="rest">
+            REST 2 MINUTES
+        </div>
+        <div class="break"></div>
+        <div class="exercise">
+            6. 2 Mile Run
+        </div>
+        <div class="exercisetime">
+            For Time
+        </div>
+    </div>
+</body>
+<script>
+    function goBack() {
+        window.location = "https://www.leatice.tech/projects/fitness/fitness.html";
+    }
+</script>
+</html>
