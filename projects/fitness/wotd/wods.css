@@ -1,0 +1,69 @@
+body {
+    display: grid;
+    grid-template-columns: 7;
+    grid-template-rows: 7;
+    background-color: white;
+}
+.back-btn {
+    position: absolute;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+.back-btn:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+.heading {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    font-size: xxx-large;
+    justify-self: center;
+    padding: 15px 60px;
+    border: solid black 5px;
+    border-radius: 10px;
+    margin: 15px;
+}
+.exercise-block{
+    border: solid black 5px;
+    padding: 10px;
+    border-radius: 10px;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 7;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+.rest {
+    margin: 15px;
+}
+.exercise {
+    padding: 15px 20px;
+    font-weight: bolder;
+    font-size: 24px;
+}
+.exercisetime {
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.howto {
+    flex-basis: 100%;
+    justify-self: center;
+    border: solid black 5px;
+    padding: 15px;
+    border-radius: 10px;
+}

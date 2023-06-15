@@ -16,6 +16,9 @@
     <div class="crossfitlevel">Crossfit lvl 1</div>
     <div class="guide" onclick="window.open('../fitness/wotd/lvl1/trainingguide.pdf', '_blank', 'fullscreen=yes'); return">Training Guide</div>
     <div class="handbook" onclick="window.open('../fitness/wotd/lvl1/parthandbook.pdf', '_blank', 'fullscreen=yes'); return">Participant Handbook</div>
+
+    <div class="program-one" onclick="load230615()">23/06/15</div>
+    <div class="workout-plan" onclick="load2320615()">Plan</div>
     <div class="program-one" onclick="loadDT()">DT</div>
     <div class="workout-plan" onclick="loadDT()">Plan</div>
     <div class="program-one" onclick="loadLinda()">Linda</div>
@@ -28,6 +31,9 @@
 
 
     <script>
+        function load230615() {
+            window.location = "https://www.leatice.tech/projects/fitness/wotd/230615.html";
+        }
 function goBack() {
     window.location = "https://www.leatice.tech";
 }
