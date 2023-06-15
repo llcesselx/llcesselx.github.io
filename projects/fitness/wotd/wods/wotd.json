@@ -72,6 +72,37 @@
         "advanced: 4 - 6 mins",
         "elite: < 3 mins"
       ]
+    },
+    {
+      "id": "4",
+      "name": "grace",
+      "mode": "for time",
+      "reps": "30",
+      "exercises": "clean-and-jerk (135/90lb)",
+      "howtoperform": "power cleans or full cleans are acceptable. You may re-set after the Cleanor catch the bar in the rack position for the clean and push straight into the jerk without pausing.",
+      "score": [
+        "beginner: 6 - 7 mins",
+        "intermediate: 4 - 5 mins",
+        "advanced: 3 - 4 mins",
+        "elite: < 2 mins"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "cindy",
+      "mode": "AMRAP",
+      "exercises": [
+        "5 pull-ups",
+        "10 push-ups",
+        "15 air squats"
+      ],
+      "howtoperform": "on a 20 minute clock, perform as many rounds as possible. 1 round is equal to 5 pull-ups, 10 push-ups and 15 air squats",
+      "score": [
+        "beginner: 11 - 12 rounds",
+        "intermediate: 13 - 17 rounds",
+        "advanced: 19 - 22 rounds",
+        "elite: 24+ rounds"
+      ]
     }
   ]
 }

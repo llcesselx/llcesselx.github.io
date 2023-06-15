@@ -5,12 +5,11 @@
     <title>WOTD</title>
     <link rel="icon" href="images/crossfitlogo.png"/>
 </head>
-<body onload="createList()">
+<body onload="showList()">
 
 <script>
-
     async function loadNames() {
-        const response = await fetch('wotd.json');
+        const response = await fetch('wods/wotd.json');
         const wods = await response.json();
 
         console.log(wods);
@@ -19,14 +18,14 @@
     wods = loadNames();
 
     function showList() {
-        fetch('wotd.json')
+        fetch('wods/wotd.json')
             .then(response => response.json())
             .then(data => createList(data))
     }
 
     function createList(data) {
         const mainUL = document.createElement('ol');
-        for (let i = 0; i < data.result.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             const wodLI = document.createElement('li');
             wodLI.innerHTML = data.result[i].name;
 
@@ -40,7 +39,7 @@
             wodLI.appendChild(exerciseUL);
             mainUL.appendChild(wodLI);
         }
-        document.body.appendChild(mainLI);
+        document.body.appendChildUL;
     }
 
 
