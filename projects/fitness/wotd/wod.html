@@ -5,30 +5,45 @@
     <title>WOTD</title>
     <link rel="icon" href="images/crossfitlogo.png"/>
 </head>
-<body onload="appendData()">
-    <div id="myData"></div>
+<body onload="createList()">
+
 <script>
 
-    fetch("/wotd.json")
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-        })
-        .catch(function (err) {
-            console.log(err);
-        })
+    async function loadNames() {
+        const response = await fetch('wotd.json');
+        const wods = await response.json();
 
-    function appendData(data) {
-        let mainContainer = document.getElementById("myData");
-
-        for (let i = 0; i < data.length; i++) {
-            let div = document.createElement("div");
-            div.innerHTML = 'Name: ' + data[i].name;
-            mainContainer.appendChild(div);
-        }
+        console.log(wods);
+        return wods;
     }
+    wods = loadNames();
+
+    function showList() {
+        fetch('wotd.json')
+            .then(response => response.json())
+            .then(data => createList(data))
+    }
+
+    function createList(data) {
+        const mainUL = document.createElement('ol');
+        for (let i = 0; i < data.result.length; i++) {
+            const wodLI = document.createElement('li');
+            wodLI.innerHTML = data.result[i].name;
+
+            const exerciseUL = document.createElement('ul');
+            for (var key in data.result[i].exercises) {
+                const exercisesLI = document.createElement('li');
+                exercisesLI.innerHTML = key + ': ' + data.result[i].exercises[key];
+                exerciseUL.appendChild(exercisesLI);
+            }
+
+            wodLI.appendChild(exerciseUL);
+            mainUL.appendChild(wodLI);
+        }
+        document.body.appendChild(mainLI);
+    }
+
+
 </script>
 </body>
 </html>
