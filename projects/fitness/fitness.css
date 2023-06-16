@@ -11,6 +11,12 @@ hr {
     margin-left: 0;
     height: 4px;
 }
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: #1c1c1c;
+}
 .image {
     padding: 15px;
     grid-column-start: 1;
