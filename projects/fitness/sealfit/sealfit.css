@@ -1,0 +1,108 @@
+body {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr 1fr 1fr 1fr 1fr;
+    background: #222831;
+}
+hr {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    margin-left: 0;
+    height: 4px;
+}
+a {
+    text-decoration: none;
+    color: #1b1b1b;
+}
+a:visited {
+    color: #1c1c1c;
+}
+.container {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+    flex-flow: wrap;
+    justify-self: center;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+.dayscontainer {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+    flex-basis: 100%;
+    flex-flow: wrap;
+    justify-self: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+.page-heading {
+    font-size: 40px;
+    font-weight: bold;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    justify-self: center;
+    margin: 10px;
+    padding: 15px 25px;
+    border: 5px solid #393e46;;
+    border-radius: 10px;
+    background: #eeeeee;
+    color: #222831;
+    height: 50px;
+}
+.week {
+    padding: 10px 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: right;
+    vertical-align: bottom;
+    border: 5px solid #393e46;;
+    border-radius: 10px;
+    background: #0092ca;
+    width: 125px;
+    height: 20px;
+    text-align: center;
+    color: #222831;
+    flex-basis: 100%;
+}
+.week:hover {
+    cursor: pointer;
+}
+.day {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px;
+    justify-self: left;
+    vertical-align: bottom;
+    border: 5px solid #393e46;
+    border-radius: 10px;
+    background: #eeeeee;
+    width: 125px;
+    height: 20px;
+    text-align: center;
+    color: #222831;
+}
+.day:hover {
+    cursor: pointer;
+}
+.back-btn {
+    position: absolute;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+.back-btn:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
