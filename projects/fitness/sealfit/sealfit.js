@@ -1,6 +1,6 @@
 function gotoHome() {
-    window.location.href = "https://leatice.tech/fitness.html";
+    window.location = '../fitness.html';
 }
 function gotoSeal() {
-    window.location.href = "https://leatice.tech/fitness/sealfit/sealfit.html";
+    window.location = '../../sealfit.html';
 }
