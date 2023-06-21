@@ -105,4 +105,23 @@ a:visited {
     background: white;
     color: black;
 }
+.note{
+    justify-self: flex-start;
+    flex-basis: 100%;
+}
+.noteheading {
+    flex-basis: 100%;
+    justify-self: flex-start;
+    font-weight: bold;
+    font-size: larger;
+}
+.notecontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: black solid 3px;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 15px;
+}
 
