@@ -11,6 +11,8 @@ hr {
     margin-left: 0;
     height: 4px;
 }
+
+/* SEALFIT LANDING PAGE STYLE */
 a {
     text-decoration: none;
     color: #1b1b1b;
@@ -125,6 +127,8 @@ a:visited {
     margin: 10px 5px;
     padding: 15px;
 }
+
+/* INDIVIDUAL WORKOUT PAGE STYLE */
 .heading {
     grid-column-start: 1;
     grid-column-end: 7;
@@ -136,6 +140,7 @@ a:visited {
     border: solid black 5px;
     border-radius: 10px;
     margin: 15px;
+    background: white;
 }
 .exercise-block{
     border: solid black 5px;
@@ -149,6 +154,7 @@ a:visited {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    background: white;
 }
 .break {
     flex-basis: 100%;
