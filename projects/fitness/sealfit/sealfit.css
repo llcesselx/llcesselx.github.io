@@ -125,4 +125,62 @@ a:visited {
     margin: 10px 5px;
     padding: 15px;
 }
-
+.heading {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    font-size: xxx-large;
+    justify-self: center;
+    padding: 15px 10px;
+    border: solid black 5px;
+    border-radius: 10px;
+    margin: 15px;
+}
+.exercise-block{
+    border: solid black 5px;
+    padding: 10px;
+    border-radius: 10px;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 7;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+.rest {
+    margin: 15px;
+}
+.exercise {
+    padding: 15px 20px;
+    font-weight: bolder;
+    font-size: 28px;
+    text-decoration: underline overline;
+}
+.explain {
+    font-weight: normal;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 20px;
+    flex-basis: 100%;
+}
+.exercisetime {
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: underline overline;
+    text-transform: uppercase;
+}
+.howto {
+    flex-basis: 100%;
+    justify-self: center;
+    border: solid black 5px;
+    padding: 15px;
+    border-radius: 10px;
+}
