@@ -70,6 +70,22 @@ a:visited {
     text-align: center;
     color: #222831;
 }
+.program-one2 {
+    padding: 10px 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: right;
+    vertical-align: bottom;
+    border: 5px solid #393e46;;
+    border-radius: 10px;
+    background: #0092ca;
+    width: 125px;
+    height: 20px;
+    text-align: center;
+    color: #222831;
+}
 .program-one:hover {
     cursor: pointer;
 }
