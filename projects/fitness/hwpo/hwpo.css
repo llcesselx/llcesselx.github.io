@@ -1,0 +1,117 @@
+body {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    background: #222831;
+}
+hr {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    margin-left: 0;
+    height: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: #1b1b1b;
+}
+a:visited {
+    color: #1c1c1c;
+}
+.container {
+    display: flex;
+    flex-flow: wrap;
+    justify-self: center;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+.back-btn {
+    position: absolute;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    flex-basis: 100%;
+}
+.back-btn:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+.notecontainer {
+    background: white;
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    justify-self: center;
+    justify-content: center;
+    border: black solid 3px;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 15px;
+}
+.heading {
+    display: flex;
+    flex-basis: 100%;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: bolder;
+    justify-self: center;
+    justify-content: center;
+    padding: 15px 10px;
+    border: solid black 5px;
+    border-radius: 10px;
+    margin: 15px;
+    background: white;
+}
+.exercise-block{
+    border: solid black 5px;
+    padding: 10px;
+    border-radius: 10px;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 7;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: white;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+.rest {
+    margin: 15px;
+}
+.exercise {
+    padding: 15px 20px;
+    font-weight: bolder;
+    font-size: 28px;
+    text-decoration: underline overline;
+}
+.explain {
+    font-weight: normal;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 20px;
+    flex-basis: 100%;
+}
+.exercisetime {
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: underline overline;
+    text-transform: uppercase;
+}
+.howto {
+    flex-basis: 100%;
+    justify-self: center;
+    border: solid black 5px;
+    padding: 15px;
+    border-radius: 10px;
+}
