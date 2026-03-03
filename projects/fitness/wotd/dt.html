@@ -34,30 +34,4 @@
         </div>
     </div>
 </body>
-<script>
-    function back(){
-        window.location = "https://leatice.tech/projects/fitness/fitness.html"
-    }
-    function setdtscore() {
-        const input = document.getElementById("userInput").value;
-        document.cookie = "dtscore=" + input +"; sameSite=Lax; max-age=" + 365*24*60*60 + ";";
-        alert(input);
-    }
-    function getdtscore() {
-        let sc = "dtscore=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(";");
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(sc) === 0) {
-                document.getElementById("prevScore").innerHTML = c.substring(sc.length, c.length);
-                return c.substring(sc.length, c.length);
-            }
-        }
-        return "";
-    }
-</script>
 </html>
