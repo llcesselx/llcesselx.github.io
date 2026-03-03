@@ -1,192 +1,117 @@
+/* sealfit.css - Shared across landing page and workout pages */
+
 body {
-    display: grid;
-    grid-auto-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-rows: 1fr 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #222831;
-}
-hr {
-    width: 100%;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    margin-left: 0;
-    height: 4px;
+    color: #eeeeee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
 }
 
-/* SEALFIT LANDING PAGE STYLE */
-a {
-    text-decoration: none;
-    color: #1b1b1b;
-}
-a:visited {
-    color: #1c1c1c;
-}
-.container {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    display: flex;
-    flex-flow: wrap;
-    justify-self: center;
-    margin-top: 10px;
-    padding-bottom: 15px;
-}
-.dayscontainer {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    display: flex;
-    flex-basis: 100%;
-    flex-flow: wrap;
-    justify-self: center;
-    justify-content: space-between;
-    margin-top: 10px;
-    padding-bottom: 15px;
-}
-.page-heading {
-    font-size: 40px;
-    font-weight: bold;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    justify-self: center;
-    margin: 10px;
-    padding: 15px 25px;
-    border: 5px solid #393e46;;
-    border-radius: 10px;
-    background: #eeeeee;
-    color: #222831;
-    height: 50px;
-}
-.week {
-    padding: 10px 10px 20px;
-    font-size: 24px;
-    font-weight: bold;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    justify-self: right;
-    vertical-align: bottom;
-    border: 5px solid #393e46;;
-    border-radius: 10px;
-    background: #0092ca;
-    width: 125px;
-    height: 20px;
-    text-align: center;
-    color: #222831;
-    flex-basis: 100%;
-}
-.week:hover {
-    cursor: pointer;
-}
-.day {
-    font-weight: bold;
-    font-size: 18px;
-    padding: 15px;
-    justify-self: left;
-    vertical-align: bottom;
-    border: 5px solid #393e46;
-    border-radius: 10px;
-    background: #eeeeee;
-    width: 125px;
-    height: 20px;
-    text-align: center;
-    color: #222831;
-}
-.day:hover {
-    cursor: pointer;
-}
+/* NAVIGATION */
 .back-btn {
-    position: absolute;
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background: black;
-    color: white;
-}
-.back-btn:hover {
-    cursor: pointer;
-    background: white;
-    color: black;
-}
-.note{
-    justify-self: flex-start;
-    flex-basis: 100%;
-}
-.noteheading {
-    flex-basis: 100%;
-    justify-self: flex-start;
-    font-weight: bold;
-    font-size: larger;
-}
-.notecontainer {
-    background: white;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border: black solid 3px;
+    align-self: flex-start;
+    padding: 10px 20px;
+    border: 2px solid #eeeeee;
     border-radius: 5px;
-    margin: 10px 5px;
-    padding: 15px;
+    background: transparent;
+    color: #eeeeee;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
 }
 
-/* INDIVIDUAL WORKOUT PAGE STYLE */
-.heading {
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    font-size: xxx-large;
-    justify-self: center;
-    padding: 15px 10px;
-    border: solid black 5px;
-    border-radius: 10px;
-    margin: 15px;
-    background: white;
+.back-btn:hover {
+    background: #eeeeee;
+    color: #222831;
 }
-.exercise-block{
-    border: solid black 5px;
-    padding: 10px;
-    border-radius: 10px;
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 2;
-    grid-row-end: 7;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background: white;
-}
-.break {
-    flex-basis: 100%;
-    height: 0;
-}
-.rest {
-    margin: 15px;
-}
-.exercise {
-    padding: 15px 20px;
-    font-weight: bolder;
-    font-size: 28px;
-    text-decoration: underline overline;
-}
-.explain {
-    font-weight: normal;
-    padding: 15px 20px;
+
+/* HEADINGS */
+.page-heading {
+    font-size: 2.5rem;
     font-weight: bold;
-    font-size: 20px;
-    flex-basis: 100%;
-}
-.exercisetime {
-    padding: 15px 20px;
-    font-weight: bold;
-    font-size: 24px;
-    text-decoration: underline overline;
     text-transform: uppercase;
+    border-bottom: 4px solid #00adb5;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
 }
-.howto {
-    flex-basis: 100%;
-    justify-self: center;
-    border: solid black 5px;
+
+.week {
+    font-size: 1.5rem;
+    color: #00adb5;
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+/* DAYS GRID */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.dayscontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.day {
+    background: #393e46;
+    border: 2px solid #00adb5;
+    border-radius: 8px;
     padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.day:hover {
+    transform: translateY(-5px);
+    background: #00adb5;
+}
+
+.day a {
+    text-decoration: none;
+    color: #eeeeee;
+    font-weight: bold;
+    display: block; /* Makes the whole box clickable */
+}
+
+/* WORKOUT PAGE SPECIFIC */
+.exercise-block {
+    background: #393e46;
+    padding: 25px;
     border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.exercise {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00adb5;
+    margin-top: 15px;
+    border-left: 4px solid #00adb5;
+    padding-left: 10px;
+}
+
+.explain {
+    margin-left: 20px;
+    color: #d1d1d1;
+    font-style: italic;
+}
+
+.notecontainer {
+    margin-top: 20px;
+    padding: 15px;
+    background: #2d333b;
+    border-radius: 5px;
+    font-size: 0.9rem;
 }

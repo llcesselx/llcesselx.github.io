@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SealFit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SealFit - Basic Training</title>
     <link rel="icon" href="sealtrident.jpg"/>
     <link rel="stylesheet" href="sealfit.css"/>
 </head>
@@ -10,42 +11,39 @@
 <div class="back-btn" onclick="gotoHome()">Back</div>
 <div class="page-heading">8 Weeks to SealFit</div>
 
-<!-- Week 1: -->
 <div class="container">
-    <div class="week">Week 1</div>
+    <div class="week">Week 1: Foundations</div>
     <div class="dayscontainer">
-        <div class="day"><a href="workouts/week1/wk1monday.html">Monday</a></div>
-        <div class="day"><a href="workouts/week1/wk1tuesday.html">Tuesday</a></div>
-        <div class="day"><a href="workouts/week1/wk1wednesday.html">Wednesday</a></div>
-        <div class="day"><a href="workouts/week1/wk1thursday.html">Thursday</a></div>
-        <div class="day"><a href="workouts/week1/wk1friday.html">Friday</a></div>
-        <div class="day"><a href="workouts/week1/wk1saturday.html">Saturday</a></div>
+        <div class="day" onclick="loadWorkout(1, 'monday')">Monday</div>
+        <div class="day" onclick="loadWorkout(1, 'tuesday')">Tuesday</div>
+        <div class="day" onclick="loadWorkout(1, 'wednesday')">Wednesday</div>
+        <div class="day" onclick="loadWorkout(1, 'thursday')">Thursday</div>
+        <div class="day" onclick="loadWorkout(1, 'friday')">Friday</div>
+        <div class="day" onclick="loadWorkout(1, 'saturday')">Saturday</div>
     </div>
 </div>
 
-<!-- Week 2: -->
 <div class="container">
-    <div class="week">Week 2</div>
+    <div class="week">Week 2: Progression</div>
     <div class="dayscontainer">
-        <div class="day"><a href="workouts/week2/wk2monday.html">Monday</a></div>
-        <div class="day"><a href="workouts/week2/wk2tuesday.html">Tuesday</a></div>
-        <div class="day"><a href="workouts/week2/wk2wednesday.html">Wednesday</a></div>
-        <div class="day"><a href="workouts/week2/wk2thursday.html">Thursday</a></div>
-        <div class="day"><a href="workouts/week2/wk2friday.html">Friday</a></div>
-        <div class="day"><a href="workouts/week2/wk2saturday.html">Saturday</a></div>
+        <div class="day" onclick="loadWorkout(2, 'monday')">Monday</div>
+        <div class="day" onclick="loadWorkout(2, 'tuesday')">Tuesday</div>
+        <div class="day" onclick="loadWorkout(2, 'wednesday')">Wednesday</div>
+        <div class="day" onclick="loadWorkout(2, 'thursday')">Thursday</div>
+        <div class="day" onclick="loadWorkout(2, 'friday')">Friday</div>
+        <div class="day" onclick="loadWorkout(2, 'saturday')">Saturday</div>
     </div>
 </div>
 
-<!-- Week 3: -->
 <div class="container">
-    <div class="week">Week 3</div>
+    <div class="week">Week 3: Progression</div>
     <div class="dayscontainer">
-        <div class="day"><a href="workouts/week3/wk3monday.html">Monday</a></div>
-        <div class="day"><a href="workouts/week3/wk3tuesday.html">Tuesday</a></div>
-        <div class="day"><a href="workouts/week3/wk3wednesday.html">Wednesday</a></div>
-        <div class="day"><a href="workouts/week3/wk3thursday.html">Thursday</a></div>
-        <div class="day"><a href="workouts/week3/wk3friday.html">Friday</a></div>
-        <div class="day"><a href="workouts/week3/wk3saturday.html">Saturday</a></div>
+        <div class="day" onclick="loadWorkout(3, 'monday')">Monday</div>
+        <div class="day" onclick="loadWorkout(3, 'tuesday')">Tuesday</div>
+        <div class="day" onclick="loadWorkout(3, 'wednesday')">Wednesday</div>
+        <div class="day" onclick="loadWorkout(3, 'thursday')">Thursday</div>
+        <div class="day" onclick="loadWorkout(3, 'friday')">Friday</div>
+        <div class="day" onclick="loadWorkout(3, 'saturday')">Saturday</div>
     </div>
 </div>
 
@@ -128,7 +126,6 @@
     <div class="note">> dead man's pose </div>
 </div>
 
-<script src="sealfit.js">
-</script>
+<script src="sealfit.js"></script>
+
 </body>
-</html>
