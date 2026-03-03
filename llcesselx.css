@@ -122,3 +122,80 @@ body {
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
 }
+
+/* Project Card Container */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Project Information Padding */
+.project-info {
+    padding: 1.5rem;
+}
+
+/* Project Links Layout */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Base Button Styles */
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Primary Button (GitHub/Code) */
+.btn.primary {
+    background-color: #004b8d; /* Matches Indiana State Blue */
+    color: white;
+    border: 2px solid #004b8d;
+}
+
+.btn.primary:hover {
+    background-color: #003566;
+    border-color: #003566;
+}
+
+/* Secondary Button (Full Report PDF) */
+.btn.secondary {
+    background-color: transparent;
+    color: #004b8d;
+    border: 2px solid #004b8d;
+}
+
+.btn.secondary:hover {
+    background-color: #004b8d;
+    color: white;
+}
+
+/* Tech Stack Tags */
+.tech-stack span {
+    background: #e0e0e0;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
