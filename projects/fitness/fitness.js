@@ -1,18 +1,24 @@
 // fitness.js
 
-// 1. Step Back: Goes to the previous page in browser history
-function goBack() {
-    window.history.back();
+// Universal back/home functions
+function goBack() { window.history.back(); }
+function goHome() { window.location.href = "../../index.html"; }
+
+// Dynamic Loader for Classics (DT, Cindy, Linda, etc)
+function loadClassic(name) {
+    // Assuming these are in the 'wotd' folder
+    window.location.href = `wotd/${name}.html`;
 }
 
-// 2. Home: Sends user to the main portfolio index
-function goHome() {
-    // This assumes your fitness folder is two levels deep
-    // from your main index.html
-    window.location.href = "../../index.html";
+// Dynamic Loader for HWPO
+function loadHWPO(type) {
+    // Assuming these are in the 'hwpo' folder
+    // 'flagship' becomes 'hwpoflagship.html'
+    const fileName = type === 'flagship' ? 'hwpoflagship' : `hwpo${type}`;
+    window.location.href = `hwpo/${fileName}.html`;
 }
 
-// 3. Program Loaders (Centralized)
-function loadGetSwole() { window.location.href = "getswole/getswole.html"; }
-function loadGetSwoleDiet() { window.location.href = "getswole/getswole-diet.html"; }
-function getSwolePDF() { window.open("guides/getswole.pdf", "_blank"); }
+// Keeping your special PDF link
+function getSwolePDF() {
+    window.open("guides/getswole.pdf", "_blank");
+}
