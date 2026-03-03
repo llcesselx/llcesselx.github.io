@@ -1,44 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/icons/html.png"/>
     <link rel="stylesheet" href="llcesselx.css"/>
-    <title style="">Lea Tice</title>
-    <style>
-        body {
-            font-family: Rubik-80s-Fade, serif;
-        }
-    </style>
+    <title>Lea Tice | Computer Engineering</title>
 </head>
 <body>
+<nav class="navbar">
+    <div class="name-logo">Lea Tice</div>
+    <div class="nav-links">
+        <button onclick="linkedIn()">LinkedIn</button>
+        <button onclick="gitHub()">Github</button>
+        <a href="documents/resume.html" class="resume-btn">Resume</a>
+    </div>
+</nav>
 
-    <div class="nav">
-        <div class="name-heading">
-            <span>Lea Tice</span>
+<header class="hero">
+    <div class="hero-content">
+        <h1>Computer Engineering Student</h1>
+        <p>Specializing in embedded systems integration and hardware troubleshooting.</p>
+    </div>
+    <div class="hero-image">
+        <img id="imgChange" class="kitty-picture" src="https://placecats.com/400/400" onclick="kittyClick()" alt="Profile Cat">
+    </div>
+</header>
+
+<main class="container">
+    <section class="project-section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card featured">
+                <h3>SAR Recon Rover</h3>
+                <p>Semi-autonomous search and rescue rover with fire-suppression payload.</p>
+                <span class="tag">ESP32</span> <span class="tag">C++</span>
+            </div>
+            <div class="project-card featured">
+                <h3>Shift Register Library</h3>
+                <p>A custom C++ library for efficient control of 74HC595 shift registers in embedded systems.</p>
+                <span class="tag">C++</span> <span class="tag">Embedded</span>
+            </div>
         </div>
-        <ul class="navbar">
-            <li class="linkedin-btn" onclick="linkedIn()" style="border: 0;">LinkedIn</li>
-            <li class="github-btn" onclick="gitHub()" style="border: 0;">Github</li>
-            <li class="resume-btn"><a href="documents/resume.html">Resume</a></li>
+    </section>
+
+    <section class="project-section legacy">
+        <h2 class="section-title">Legacy Archive</h2>
+        <p class="section-subtitle">Older learning exercises and abandoned projects.</p>
+        <ul class="legacy-list">
+            <li><a href="projects/notwordle/notwordle.html">Wordle Clone</a></li>
+            <li><a href="projects/minesweeper/minesweeper.html">HTML Practice Minesweeper</a></li>
+            <li><a href="projects/dice/dice.html">Dice Roller</a></li>
+            <li><a href="projects/cs170projects/index.html">Web Programming Coursework</a></li>
+            <li><a href="projects/fitness/fitness.html">Workout of the Day App</a></li>
         </ul>
-    </div>
-    <div class="kitty-container">
-        <div class="projects-container">
-            <h1 class="projects-link" ><a href="projects/projects.html">Projects</a></h1>
-            <ul>
-                <li><a href="documents/ProjectsPortfolio.pdf">Lab Write Up Example</a></li>
+    </section>
+</main>
 
-                <li><a href="projects/fitness/sealfit/workouts/week1/wk1wednesday.html">Workout of the Day</a></li>
-                <li><a href="projects/fitness/fitness.html">Fitness Page</a></li>
-                <li><a href="projects/cs170projects/index.html">Web Programming Course Project</a></li>
-                <li><a href="projects/dice/dice.html">Roll a Die</a></li>
-                <li><a href="projects/minesweeper/minesweeper.html">HTML Practice</a></li>
-                <li><a href="projects/notwordle/notwordle.html">Wordle clone - (In Progress... kind of but not really)</a></li>
-            </ul>
-        </div>
-        <img class="kitty-picture" src="https://placecats.com/400/400" alt="A random cute kitty!"/>
-    </div>
-    <script src="llcesselx.js"></script>
+<script src="llcesselx.js"></script>
 </body>
 </html>

@@ -1,22 +1,17 @@
 function kittyClick() {
-    console.log("Image clicked...")
-
-    let existingImg = document.getElementById("imgChange");
-    let newKittyImg = "https://placekitty.com/250/250";
-    let newPuppyImg = "https://place-puppy.com/250x250";
-
-    if (existingImg.src === "https://placekitty.com/250/250") {
-        existingImg.src = newPuppyImg;
-    }
-
-    if (existingImg.src === "https://place-puppy.com/250x250") {
-        existingImg.src = newKittyImg;
+    let img = document.getElementById("imgChange");
+    // Check if the current source contains 'placecats'
+    if (img.src.includes("placecats.com")) {
+        img.src = "https://place-puppy.com/400x400";
+    } else {
+        img.src = "https://placecats.com/400/400";
     }
 }
 
 function linkedIn() {
-    window.location = "https://www.linkedin.com/in/lea-tice";
+    window.location.href = "https://www.linkedin.com/in/lea-tice";
 }
+
 function gitHub() {
-    window.location = "https://www.github.com/llcesselx";
+    window.location.href = "https://www.github.com/llcesselx";
 }
