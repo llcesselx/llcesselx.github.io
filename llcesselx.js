@@ -8,8 +8,14 @@ function kittyClick() {
     }
 }
 
+function goHome() {
+    console.log("Navigating to home page...");
+    // Using '/' ensures it always goes to the root of your site
+    window.location.href = "/";
+}
+
 function linkedIn() {
-    window.location.href = "https://www.linkedin.com/in/lea-tice";
+    window.location.href = "https://www.linkedin.com/in/lea-tttt";
 }
 
 function gitHub() {

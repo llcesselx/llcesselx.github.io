@@ -2,86 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../assets/icons/fitness.png"/>
     <link rel="stylesheet" href="fitness.css"/>
-    <title>Fitness</title>
+    <title>Fitness Programs</title>
 </head>
 <body>
-    <div class="back-btn" onclick="goBack()">Back</div>
-    <div class="page-heading">Fitness Programs</div>
+<nav class="nav-header">
+    <div class="nav-controls">
+        <button class="nav-btn home-btn" onclick="goHome()">🏠 Home</button>
+        <button class="nav-btn back-btn" onclick="goBack()">← Back</button>
+    </div>
+    <h1 class="page-title">Fitness Hub</h1>
+</nav>
 
-    <div class="crossfitlevel">Crossfit lvl 1</div>
-    <div class="guide" onclick="window.open('../fitness/wotd/lvl1/trainingguide.pdf', '_blank', 'fullscreen=yes'); return">Training Guide</div>
-    <div class="handbook" onclick="window.open('../fitness/wotd/lvl1/parthandbook.pdf', '_blank', 'fullscreen=yes'); return">Participant Handbook</div>
+<script src="fitness.js"></script>
 
-    <div class="program-one"><a href="sealfit/sealfit.html">SealFit</a></div>
-    <div class="diet-plan"><a href="sealfit/sealfit.html">Basic Training</a></div>
-    <div class="workout-plan"><a href="sealfit/sealfit.html">8 wks of SealFit</a></div>
+<main class="program-container">
+    <section class="category">
+        <h2>CrossFit Level 1</h2>
+        <div class="card-grid">
+            <div class="program-card">
+                <h3>Official Resources</h3>
+                <p>Training guides and participant handbooks for Level 1 certification.</p>
+                <div class="chip-group">
+                    <span class="chip pdf" onclick="window.open('../fitness/wotd/lvl1/trainingguide.pdf')">Training Guide</span>
+                    <span class="chip pdf" onclick="window.open('../fitness/wotd/lvl1/parthandbook.pdf')">Handbook</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="program-one" onclick="getSwolePDF()">BB.com</div>
-    <div class="diet-plan" onclick="loadGetSwoleDiet()">Diet Plan</div>
-    <div class="workout-plan" onclick="loadGetSwole()">Workout Plan</div>
+    <section class="category">
+        <h2>Specialized Programs</h2>
+        <div class="card-grid">
+            <div class="program-card">
+                <h3>SealFit</h3>
+                <p>8 weeks of elite tactical conditioning and basic training.</p>
+                <div class="chip-group">
+                    <a href="sealfit/sealfit.html" class="chip link">Start Program</a>
+                </div>
+            </div>
 
-    <div class="program-one"><a href="hwpo/hwpo.html">HWPO</a></div>
-    <div class="workout-plan"><a href="hwpo/hwpo.html">Plans</a></div>
+            <div class="program-card">
+                <h3>Bodybuilding.com</h3>
+                <p>Comprehensive "Get Swole" training and nutrition protocols.</p>
+                <div class="chip-group">
+                    <span class="chip pdf" onclick="getSwolePDF()">PDF Guide</span>
+                    <span class="chip diet" onclick="loadGetSwoleDiet()">Diet Plan</span>
+                    <span class="chip link" onclick="loadGetSwole()">Workout Plan</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <hr>
-
-    <div class="program-one2"><a href="hwpo/workouts/hwpoflagship.html">HWPO Flagship</a></div>
-    <div class="workout-plan"><a href="hwpo/workouts/hwpoflagship.html">Plan</a></div>
-    <div class="program-one"><a href="hwpo/workouts/hwpo60.html">HWPO 60</a></div>
-    <div class="workout-plan"><a href="hwpo/workouts/hwpo60.html">Plan</a></div>
-    <div class="program-one2"><a href="hwpo/workouts/hwpostrong.html">HWPO Strong</a></div>
-    <div class="workout-plan"><a href="hwpo/workouts/hwpostrong.html">Plan</a></div>
-    <div class="program-one"><a href="hwpo/workouts/hwpolift.html">HWPO Lift</a></div>
-    <div class="workout-plan"><a href="hwpo/workouts/hwpolift.html">Plan</a></div>
-    <div class="program-one2"><a href="hwpo/workouts/hwposweat.html">HWPO Sweat</a></div>
-    <div class="workout-plan"><a href="hwpo/workouts/hwposweat.html">Plan</a></div>
-
-    <div class="program-one" onclick="load230615()">23/06/15</div>
-    <div class="workout-plan" onclick="load230615()">Plan</div>
-    <div class="program-one" onclick="loadDT()">DT</div>
-    <div class="workout-plan" onclick="loadDT()">Plan</div>
-    <div class="program-one" onclick="loadLinda()">Linda</div>
-    <div class="workout-plan" onclick="loadLinda()">Plan</div>
-    <div class="program-one" onclick="loadCindy()">Cindy</div>
-    <div class="workout-plan" onclick="loadCindy()">Plan</div>
-    <div class="program-one" onclick="loadACFT()">ACFT</div>
-    <div class="workout-plan" onclick="loadACFT()">Plan</div>
-    <div class="program-one"><a href="wotd/recoveryday.html">Recovery</a></div>
-    <div class="workout-plan"><a href="wotd/recoveryday.html">Plan</a></div>
-    <div id="myData">Test</div>
-
-
-    <script>
-function load230615() {
-    window.location = "https://llcesselx.github.io/projects/fitness/wotd/230615.html";
-}
-function goBack() {
-    window.location = "https://llcesselx.github.io/";
-}
-function loadGetSwole() {
-    window.location = "https://llcesselx.github.io/projects/fitness/getswole/getswole.html";
-}
-function loadGetSwoleDiet() {
-    window.location = "https://llcesselx.github.io/projects/fitness/getswole/getswole-diet.html"
-}
-function getSwolePDF() {
-    window.location = "https://llcesselx.github.io/projects/fitness/guides/getswole.pdf"
-}
-function loadDT() {
-    window.location = "https://llcesselx.github.io/projects/fitness/wotd/dt.html";
-}
-function loadLinda() {
-    window.location = "https://llcesselx.github.io/projects/fitness/wotd/linda.html";
-}
-function loadCindy() {
-    window.location = "https://llcesselx.github.io/projects/fitness/wotd/cindy.html";
-}
-function loadACFT() {
-    window.location = "https://llcesselx.github.io/projects/fitness/wotd/acft.html";
-}
-    </script>
-</body>
-</html>
+    <section class="category">
+        <h2>Workout Library</h2>
