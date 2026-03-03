@@ -22,12 +22,6 @@ function loadHWPO(type) {
 function getSwolePDF() {
     window.open("guides/getswole.pdf", "_blank");
 }
-function loadGetSwoleDiet() {
-    window.open("getswole/getswole-diet.html", "_blank");
-}
-function loadGetSwole() {
-    window.open("getswole.html");
-}
 
 // Save a score (e.g., saveScore('cindy', '20 Rounds'))
 function saveScore(workoutName) {
