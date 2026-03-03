@@ -122,3 +122,66 @@ body {
     filter: brightness(1.2);
 }
 
+.wod-card {
+    background: #1e1e1e;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 15px;
+    border-top: 5px solid var(--accent-green);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.wod-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+}
+
+.exercise-list {
+    list-style: none;
+    padding: 0;
+}
+
+.exercise-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    font-size: 1.1rem;
+}
+
+.exercise-list li strong {
+    color: var(--accent-green);
+    font-size: 1.4rem;
+    margin-right: 10px;
+}
+
+.score-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.score-display {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: var(--accent-orange);
+}
+
+.input-group input {
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    background: #333;
+    color: white;
+}
+
+.input-group button {
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background: var(--accent-green);
+    font-weight: bold;
+    cursor: pointer;
+}

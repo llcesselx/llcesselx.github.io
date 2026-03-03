@@ -2,26 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Get Swole Diet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../fitness.css"/>
-    <link rel="stylesheet" href="getswole.css"/>
-    <style>
-        h1 {
-            justify-self: center;
-        }
-        #nothing {
-            font-weight: bolder;
-            animation: show 0.01s forwards, pop-word 1.5s forwards;
-            animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
-            opacity: 0;
-
-            transform: rotateX(120deg);
-            transform-origin: 50% 100%;
-        }
-    </style>
+    <title>Get Swole | Diet Plan</title>
 </head>
-<body>
-    <h1>Get Swole Diet Plan</h1>
-    <marquee direction="down" behavior="alternate">Aint nothing here</marquee>
-</body>
-</html>
+<body onload="loadScore('getswole_weight')">
+<nav class="nav-header">
+    <div class="nav-controls">
+        <button class="nav-btn home-btn" onclick="goHome()">🏠 Home</button>
+        <button class="nav-btn back-btn" onclick="goBack()">← Back</button>
+    </div>
+    <h1 class="page-title">Diet: Muscle Growth</h1>
+</nav>
+
+<main class="program-container">
+    <section class="program-card" style="border-left: 5px solid var(--accent-orange);">
+        <h3>The 4-Week Hypertrophy Strategy</h3>
+        <p>Target: 2,300 kcal | 150g Protein | 260g Carbs</p>
+        <div class="chip-group">
+            <span class="chip diet">Week 1-2: Priming</span>
+            <span class="chip link">Week 3-4: Surplus</span>
+        </div>
+    </section>
+
+    <div class="card-grid">
+        <div class="program-card">
+            <span class="chip pdf">08:00 AM</span>
+            <h3>Breakfast</h3>
+            <ul class="exercise-list">
+                <li><strong>3</strong> Whole Eggs + 1/2c Egg Whites</li>
+                <li><strong>1c</strong> Oats w/ Blueberries</li>
+            </ul>
+        </div>
+
+        <div class="program-card">
+            <span class="chip link">12:30 PM</span>
+            <h3>Lunch</h3>
+            <ul class="exercise-list">
+                <li><strong>6oz</strong> Chicken or Turkey</li>
+                <li><strong>1c</strong> Jasmine Rice</li>
+                <li><strong>1c</strong> Green Veggies</li>
+            </ul>
+        </div>
+
+        <div class="program-card">
+            <span class="chip recovery">04:00 PM</span>
+            <h3>Pre-Workout</h3>
+            <ul class="exercise-list">
+                <li><strong>1</strong> Apple or Rice Cake</li>
+                <li><strong>1tbsp</strong> Peanut Butter</li>
+            </ul>
+        </div>
+
+        <div class="program-card">
+            <span class="chip diet">07:00
