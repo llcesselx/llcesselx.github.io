@@ -1,0 +1,263 @@
+/* resume_modern.css */
+
+:root {
+    --bg-light: #f4f7f6;
+    --text-dark: #2d3436;
+    --accent-blue: #0984e3;
+    --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVIGATION */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid var(--text-dark);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: var(--bg-light);
+}
+
+.home-btn {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+/* HEADER SECTION */
+.resume-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 20px;
+}
+
+.resume-header {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    border-bottom: 5px solid var(--accent-blue);
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--bg-light);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.bio-text h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 800;
+}
+
+.bio-text h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #636e72;
+    margin-top: 5px;
+}
+
+.gpa {
+    font-weight: bold;
+    color: var(--accent-blue);
+    margin-top: 1rem;
+}
+
+.edu-date {
+    font-size: 0.9rem;
+    color: #b2bec3;
+}
+
+/* MAIN CONTENT */
+.resume-sections {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+/* SIDEBAR: Skills & Certs */
+.resume-sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+.skill-group {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 1.5rem;
+}
+
+.skill-group h3 {
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: #e3f2fd;
+    color: var(--accent-blue);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Better spacing for grouped sections */
+.resume-group {
+    margin-bottom: 3rem;
+}
+
+.resume-group h3 {
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Certification styling */
+.cert-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cert-list li {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-list strong {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.issuer {
+    font-size: 0.8rem;
+    color: #636e72;
+    font-style: italic;
+}
+
+/* Specific Timeline Adjustments */
+.timeline-item p {
+    margin-top: 8px;
+    font-size: 0.95rem;
+}
+
+.cert-flag {
+    color: #27ae60;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* MAIN TIMELINE */
+.resume-timeline {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+}
+
+.timeline-item {
+    border-left: 2px solid var(--bg-light);
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.item-header .date {
+    font-size: 0.85rem;
+    color: #b2bec3;
+    font-family: monospace;
+}
+
+.timeline-item h5 {
+    color: #636e72;
+    margin: 5px 0 10px;
+    font-weight: 400;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resume-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-sidebar {
+        position: static;
+    }
+}

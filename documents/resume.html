@@ -2,225 +2,303 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../assets/icons/html.png"/>
-    <title>Resume</title>
-    <style>
-body {
-    display: grid;
-    padding: 10px 20px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    column-gap: 10px;
-}
-li {
-    padding-bottom: 10px;
-}
-.page-title {
-    text-align: center;
-    grid-column-start: 5;
-    grid-column-end: 6;
-    font-family: "Times New Roman";
-    font-size: 36px;
-    font-weight: bold;
-}
-.back-btn {
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px 5px;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    background: black;
-    color: white;
-}
-.linkedin {
-    text-align: center;
-    padding: 10px 5px;
-    grid-column-start: 8;
-    grid-column-end: 9;
-}
-.github {
-    text-align: center;
-    padding: 10px 5px;
-    grid-column-start: 9;
-    grid-column-end: 10;
-}
-.back-btn:hover {
-    cursor: pointer;
-    background: white;
-    color: black;
-}
-.linkedin:hover {
-    cursor: pointer;
-    color: #001ac7;
-}
-.github:hover {
-    cursor: pointer;
-    color: #8c8c8c;
-}
-.summary-heading {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 50px 20px 20px 0;
-}
-.summary {
-    grid-row-start: 4;
-    grid-row-end: 6;
-    grid-column-start: 1;
-    grid-column-end: 10;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-}
-.education-heading {
-    grid-row-start: 6;
-    grid-row-end: 7;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 50px 20px 20px 0;
-}
-.education {
-    grid-row-start: 7;
-    grid-row-end: 9;
-    grid-column-start: 1;
-    grid-column-end: 10;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px 10px 10px 0;
-}
-.exp-heading {
-    grid-row-start: 10;
-    grid-row-end: 11;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 50px 20px 20px 0;
-}
-.exp {
-    grid-row-start: 11;
-    grid-row-end: 20;
-    grid-column-start: 1;
-    grid-column-end: 10;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px 10px 10px 0;
-}
-.exp-entry {
-    padding: 10px;
-}
-.work-title {
-    font-weight: bold;
-}
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/icons/resume.png"/>
+    <link rel="stylesheet" href="../llcesselx.css"/> <link rel="stylesheet" href="resume_modern.css"/>
+    <title>Lea Tice | Computer Engineering Resume</title>
 </head>
 <body>
-    <div class="back-btn" onclick="goBack()">Back</div>
-    <div class="page-title">Resume</div>
-    <div class="linkedin" onclick="linkedin()">LinkedIn</div>
-    <div class="github">Github</div>
-    <div class="summary-heading" onclick="github()">Summary</div>
-    <div class="summary">
-        I am currently a full-time student at Indiana State University majoring in Computer Engineering and
-        minoring in Computer Science, Information Technology, and Security and Risk. I am enthusiastic about
-        embedded systems, cybersecurity, and developing innovative solutions through hands-on engineering
-        projects. With experience in microcontroller programming, network security, and real-time system
-        integration, I thrive on solving complex technical challenges and continuously expanding my skill set.
-    </div>
-    <div class="education-heading">Education</div>
-    <div class="education">
-        <ul>
-            <li>B.S. in Computer Engineering - May 2026 | Minors: Computer Science, Automation Engineering Technology | Indiana State University | Terre Haute, IN</li>
-            <li>A.S. in Information Systems and Technology - May 2022 | San Bernardino Valley College | San Bernardino, CA</li>
-        </ul>
-    </div>
-    <div class="exp-heading">Experience</div>
-    <div class="exp">
-        <div class="exp-entry">
+<nav class="nav-header">
+    <button class="nav-btn" onclick="goBack()">← Portfolio</button>
+    <button class="nav-btn home-btn" onclick="goHome()">🏠 Home</button>
+</nav>
 
-            <div class="work-title">Security Operator | Indiana State University | September 2024 - Present</div>
-            <ul>
-                <li>Conduct regular scans of the network and IT infrastructure to identify security vulnerabilities and potential threats</li>
-                <li>Evaluate and analyze security threats using various tools and methodologies to assess their severity and potential impact on systems and data</li>
-                <li>Identify vulnerabilities and risks within the network and applications, providing thorough analysis to ensure they are addressed before they can be exploited</li>
-                <li>Compile comprehensive risk assessment reports that detail the identified vulnerabilities, their impact, and recommended remediation strategies</li>
-            </ul>
-            <div class="work-title">Data Center Operator | Indiana State University | September 2022 - September 2024</div>
-            <ul>
-                <li>Support production operations, run backups and main asset information</li>
-                <li>Operate computer systems, monitor computer and network systems</li>
-                <li>Monitor university network for security threats</li>
-                <li>Perform monthly vulnerability scans and generate reports for the CISO</li>
-            </ul>
-            <div class="work-title">Computer Technician I | Indiana State University | May 2022 - October 2022</div>
-            <ul>
-                <li>Assist customers in person, or via phone/email with technical issues and OIT services</li>
-                <li>Troubleshoot and repair computer issues</li>
-                <li>Download and install appropriate software and drivers for university machines</li>
-            </ul>
-            <div class="work-title">Broadband Technician | Sparklight | January 2022 - May 2022</div>
-            <ul>
-                <li>Performed commercial and residential internet installations, completed repairs,
-                terminated service, and relocated existing equipment</li>
-                <li>Install Hitron extenders via Cat5e and wiring to T-865B standards</li>
-                <li>Troubleshoot computer, IoT and peripheral device connectivity issues</li>
-                <li>Used electronic test equipment and online diagnostic tools to troubleshoot
-                customer service drops or outlets, diagnosed and repaired reception performance
-                issues, and resolved all problems from the customer-owned equipment to the output of the
-                first network tap</li>
-                <li>Assured proper upstream and downstream signal levels at each termination on customer premesis</li>
-                <li>Performed after-hour network stand-by, troubleshooting and repair</li>
-                <li>Educated customers as to the proper operation of all services, equipment, modems
-                , routers, and customer-owned equipment</li>
-            </ul>
-            <div class="work-title">Interior Electrician - Soldier | U.S. Army | July 2017 - December 2019</div>
-            <ul>
-                <li>Ensured safety and welfare of a 8 man team</li>
-                <li>Performed repairs and maintenance on electrical systems needed for mission success</li>
-                <li>Performed maintenance and conducted preventative measures to vehicles and equipment</li>
-                <li>Deployed in support of Operation Faithful Patriot under joint operations with the Department of Homeland Security from October 2018 to December 2018</li>
-                <li>Graduated basic combat training and advanced individual training with Sapper Spirit award for outstanding achievement</li>
-            </ul>
-            <div class="work-title">Tire Technician | Costco Wholesale | April 2016 - April 2017</div>
-            <ul>
-                <li>Diagnosed problems relating to customers tires</li>
-                <li>Influenced tire sales to customers based on their individual needs</li>
-                <li>Repaired flat tires caused by penetrating objects in the tire wall</li>
-            </ul>
-            <div class="work-title">Cashier | Costco Wholesale | April 2013 - March 2016</div>
-            <ul>
-                <li>Promoted Costco executive membership to customers resulting in membership upgrades at the point of sale</li>
-                <li>Spoke with customers regarding their experience and held a high standard to customer service needs</li>
-                <li>Handled money at the point of sale resulting in $0.00 register overages and shortages</li>
-                <li>Accurate item scanning resulting in less than .1% of items being audited while maintaining a high items per minute scan, 77+</li>
-            </ul>
-            <div class="work-title">Front End Assistant | Costco Wholesale | September 2012 - April 2013</div>
-            <ul>
-                <li>Stocked merchandise using first in, first out (FIFO) procedures like a stack</li>
-                <li>Maintained cleanliness of warehouse sales floor, bay areas and restrooms</li>
-                <li>Improved customer satisfaction with loading and unloading customers in need of help to and from their vehicles</li>
-            </ul>
+<main class="resume-container">
+    <header class="resume-header">
+        <div class="header-content">
+            <img src="https://placecats.com/300/300" class="profile-pic" alt="Lea Tice Portrait">
+            <div class="bio-text">
+                <h1>Lea Tice</h1>
+                <h2>Highly motivated computer engineering student with a unique background in military electrical
+                    systems and hands-on hardware troubleshooting. Proven ability to apply technical knowledge to solve
+                    complex problems and adapt quickly to new technologies and challenges. Currently preparing for the
+                    FE Electrical and Computer Engineering Exam. Previous secret security clearance (investigation
+                    completed March 04, 2019) </h2>
+                <p class="gpa">B.S. Computer Engineering Tech | GPA: 3.6/4.0</p>
+                <p class="edu-date">May 2026</p>
+            </div>
         </div>
+    </header>
+
+    <div class="resume-sections">
+        <aside class="resume-sidebar">
+            <section class="skill-group">
+                <h3>Skills</h3>
+                <div class="tag-cloud">
+                    <span class="tag">C</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">MIPS</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Ladder Logic</span>
+                    <span class="tag">RSLogix</span>
+                    <span class="tag">PLCs</span>
+                    <span class="tag">Microcontrollers</span>
+                    <span class="tag">Embedded Systems</span>
+                    <span class="tag">Analog/Digital I/O</span>
+                    <span class="tag">FPGA</span>
+                    <span class="tag">Oscilloscope</span>
+                    <span class="tag">Logic Analyzer</span>
+                    <span class="tag">Multimeter</span>
+                    <span class="tag">Soldering</span>
+                    <span class="tag">PCB Design</span>
+                    <span class="tag">AutoCAD</span>
+                    <span class="tag">Fusion 360</span>
+                    <span class="tag">Wireshark</span>
+                    <span class="tag">Visual Studio IDE</span>
+                    <span class="tag">Pycharms</span>
+                    <span class="tag">Webstorm</span>
+                    <span class="tag">CLion</span>
+                    <span class="tag">Sublime Text</span>
+                    <span class="tag">Notepad++</span>
+                    <span class="tag">Linux OS</span>
+                    <span class="tag">Microsoft OS</span>
+                    <span class="tag">Microsoft Office</span>
+                    <span class="tag">Microsoft Defender</span>
+                    <span class="tag">Vulnerability Management</span>
+                    <span class="tag">Threat and Risk Analysis</span>
+                    <span class="tag">NEC</span>
+                    <span class="tag">OSHA</span>
+                    <span class="tag">Military Standards</span>
+                    <span class="tag">NASA Wiring Standards</span>
+                </div>
+            </section>
+            <section class="skill-group">
+                <h3>Certs/Training</h3>
+                <ul class="cert-list">
+                    <li>
+                        <strong>Currently Preparing for FE Electrical and Computer Engineering Exam</strong>
+                        <span class="issuer">NCEES</span>
+                    </li>
+                    <li>
+                        <strong>Applied Computer Science Certificate</strong>
+                        <span class="issuer">Indiana State University</span>
+                    </li>
+                    <li>
+                        <strong>Personal Fitness Trainer</strong>
+                        <span class="issuer">NASM</span>
+                    </li>
+                    <li>
+                        <strong>Interior Electrician (12R)</strong>
+                        <span class="issuer">U.S. Army</span>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <section class="resume-timeline">
+
+            <div class="resume-group">
+                <h3>Professional Experience</h3>
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>Threat and Vulnerability Analyst</h4>
+                        <span class="date">September 2024 - May 2026</span>
+                    </div>
+                    <h5>Indiana State University | Terre Haute, IN</h5>
+                    <p>Responsible for ensuring the security of critical IT systems by leading the university’s vulnerability management efforts.</p>
+                    <p>Conduct regular scans of the network and IT infrastructure to identify security vulnerabilities and potential threats .</p>
+                    <p>Evaluate and analyze security threats using various tools and methodologies to assess their severity and potential impact on systems and data.</p>
+                    <p>Identify vulnerabilities and risks within the network and applications, providing thorough analysis to ensure they are addressed before they can be exploited.</p>
+                    <p>Analyze the potential impact of identified threats and vulnerabilities, taking into consideration system integrity, operational continuity, and data security.</p>
+                    <p>Compile comprehensive risk assessment reports that detail the identified vulnerabilities, their impact, and recommended remediation strategies.</p>
+                    <p>Collaborate with IT teams to design and implement remediation measures, ensuring that identified vulnerabilities are effectively mitigated and security risks are minimized.</p>
+                    <p>Designing and deploying realistic phishing campaigns to test employee awareness.</p>
+                    <p>Analyzing the "Incident" queue in Microsoft Defender to distinguish between "True Positives" (actual attacks) and "False Positives" (legitimate user activity).</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>VA Military Student Specialist</h4>
+                        <span class="date">February 2024 - May 2026</span>
+                    </div>
+                    <h5>Department of Veteran Affairs | Terre Haute, IN</h5>
+                    <p>Process adds/drops, change in degree/major, and non-degree registrations for veteran students.</p>
+                    <p>Process veteran enrollment benefit forms and certification letters.</p>
+                    <p>Assist with general inquiries about VA Educational Benefits.</p>
+                    <p>Maintain regulatory confidentiality compliance in accordance with federal, state, and Indiana State University policies and guidelines.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>Data Center Operator</h4>
+                        <span class="date">September 2022 - September 2024</span>
+                    </div>
+                    <h5>Indiana State University | Terre Haute, IN</h5>
+                    <p>Maintain continuous vigilance over the university network, actively identifying and addressing security threats to ensure the integrity and reliability of digital operations.</p>
+                    <p>Conducted monthly vulnerability scans and crafted reports for the Chief Information Security Officer (CISO), fortifying our cyber defense strategies with proactive insights and actionable recommendations.</p>
+                    <p>Safeguarded data integrity and confidentiality as a data center operator, leveraging expertise in Intune and Azure to implement robust cybersecurity measures and ensure compliance with industry standards.</p>
+                    <p>Support production operations, run backups and main asset information.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>Computer Technician I</h4>
+                        <span class="date">May 2022 - October 2022</span>
+                    </div>
+                    <h5>Indiana State University | Terre Haute, IN</h5>
+                    <p>Provide exceptional technical support to customers via in-person interactions, phone calls, email, and chat, addressing a wide range of technical issues and optimizing access to OIT services with prompt and effective solutions.</p>
+                    <p>Diagnose and resolve a variety of computer issues, employing advanced troubleshooting techniques to swiftly restore optimal performance and minimize downtime.</p>
+                    <p>Skillfully procure and install necessary drivers and software for university machines, ensuring seamless functionality and optimal performance to support academic and administrative operations.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>Broadband Technician</h4>
+                        <span class="date">January 2022 - May 2022</span>
+                    </div>
+                    <h5>Sparklight | Brazil, IN</h5>
+                    <p>Performs commercial and residential internet installations, completes repairs, terminates service, and relocates existing equipment.</p>
+                    <p>Install Hitron extenders via cat5e and wiring to T-865B standards.</p>
+                    <p>Troubleshoot computer, IoT and peripheral device connectivity issues.</p>
+                    <p>Use electronic test equipment and online diagnostic tools to troubleshoot customer service drops or outlets, diagnose and repair reception performance issues, and resolve all problems from the customer-owned equipment to the output of the first network tap.</p>
+                    <p>Assure proper upstream and downstream signal levels at each termination on the customer's premises.</p>
+                    <p>Perform after-hours network stand-by, troubleshooting and repair.</p>
+                    <p>Educate customers as to the proper operation of all services, equipment, modems, routers and customer owned equipment.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>Equal Opportunity Ambassador</h4>
+                        <span class="date">September 2018 - December 2019</span>
+                    </div>
+                    <h5>U.S. Army | Fort Knox, KY</h5>
+                    <p>United States Army EO representatives are non-commissioned officers trained to report, instruct, and know the legal policy of discriminatory behavior in the armed forces. These individuals serve as advocates, mediums, and decision-makers for cases of discrimination against victimized soldiers.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>Interior Electrician 12R</h4>
+                        <span class="date">July 2017 - January 2020</span>
+                    </div>
+                    <h5>U.S. Army | Fort Knox, KY</h5>
+                    <p>Ensured the safety and welfare of an eight person team.</p>
+                    <p>Ensured work areas were safe and hazardous materials were stored according to OSHA, EPA and DOD regulation, resulting in zero workplace accidents/ incidents.</p>
+                    <p>Consistently scored in top 1% of company in testing procedures.</p>
+                    <p>Performed repairs and maintenance on electrical systems needed for mission success.</p>
+                    <p>Performed maintenance and conducted preventative measures to vehicles and equipment.</p>
+                    <p>Deployed in support of the Department of Homeland Security in border control measures, Operation Faithful Patriot.</p>
+                    <p>Supported Director Chief Operating Officer (Garrison Commander) operations of Fort Knox by improving area around Fort Knox through various projects.</p>
+                    <p>Adapted and achieved graduation at Basic Skills Course (BCT) and Advanced Skills Course, Interior Electrician (AIT).</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>Tire Technician</h4>
+                        <span class="date">September 2012 - April 2017</span>
+                    </div>
+                    <h5>CostCo Wholesale | Colorado Springs, CO</h5>
+                    <p>Diagnosed problems relating to customers tires.</p>
+                    <p>Influenced tire sales to customers relating to their individual needs. </p>
+                    <p>Repaired flat tires.</p>
+                    <p>Mounted and Dismounted wheels to the vehicle.</p>
+                    <p>Installed tires to stock and aftermarket wheels.</p>
+                    <p>Built customer loyalty through high customer satisfaction.</p>
+                </div>
+            </div>
+
+            <div class="resume-group">
+                <h3>Technical Projects</h3>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>The Smart Rescue Rover (Senior Capstone)</h4>
+                        <span class="date">Aug 2025 - May 2026</span>
+                    </div>
+                    <h5>Project Manager & Systems Engineer | Indiana State University</h5>
+
+                    <p>Developing a dual-node robotics platform for FPV manual operation and autonomous fire suppression.</p>
+
+                    <ul class="project-details">
+                        <li><strong>Systems Integration:</strong> Established high-speed, low-latency UDP communication between an ESP32-D controller and an Arduino Uno R4 WiFi Hub.</li>
+                        <li><strong>Hardware Engineering:</strong> Designed a tri-level "Sandwich" chassis in CAD and implemented a 12V vs 5V/3.3V isolated power map using Buck Converters & Fuse Relays to protect logic from motor noise.</li>
+                        <li><strong>Embedded Programming:</strong> Implemented "XSHUT" pin logic to manage multiple VL53L0X ToF sensors on a single I2C bus for precise obstacle avoidance.</li>
+                        <li><strong>Full-Stack Control:</strong> Integrated an ESP32-CAM to stream live MJPEG video to a mobile browser for remote navigation.</li>
+                    </ul>
+
+                    <div class="tag-cloud">
+                        <span class="tag">Arduino Uno R4</span>
+                        <span class="tag">ESP32</span>
+                        <span class="tag">UDP Protocol</span>
+                        <span class="tag">I2C</span>
+                        <span class="tag">CAD</span>
+                        <span class="tag">C++</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>LCD595-ISU Custom Arduino Driver</h4>
+                        <span class="date">May 2025 - July 2025</span>
+                    </div>
+                    <h5>Personal Summer Project</h5>
+
+                    <p>Developed and published a lightweight Arduino library that interfaces a 1602 LCD
+                        display with a 74HC595 shift register, reducing pin usage and improving efficiency
+                        in embedded systems.</p>
+
+                    <ul class="project-details">
+                        <li><strong>Hardware Engineering:</strong> Designed for microcontroller environments with limited I/O.</li>
+                        <li><strong>Programming:</strong> Written in C++.</li>
+                    </ul>
+
+                    <div class="tag-cloud">
+                        <span class="tag">Arduino Uno R4</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Github</span>
+                        <span class="tag">I2C</span>
+                        <span class="tag">Datasheets</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="resume-group">
+                <h3>Leadership & Involvement</h3>
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>President | Women in STEM Professions</h4>
+                        <span class="date">Aug 2025 - May 2026</span>
+                    </div>
+                    <p>Leading strategic planning for workshops and industry networking events. Increased member retention and coordinated campus-wide STEM advocacy programs.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>Vice President | IEEE</h4>
+                        <span class="date">Aug 2024 - May 2026</span>
+                    </div>
+                    <p>Institute of Electrical and Electronics Engineers. Assisting in technical workshop organization and member recruitment for the ISU student chapter.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4>Member | Cybersycamore Club</h4>
+                        <span class="date">Aug 2024 - May 2026</span>
+                    </div>
+                    <p> Competed in NCL Capture the Flag competition against 6,200+ participants, placing in the top 20% overall. Demonstrated technical mastery in Log Analysis, scoring in the 96th percentile by identifying patterns and anomalies in complex datasets. Executed advanced OSINT (Open Source Intelligence) gathering techniques to solve challenges, ranking in the top 8% of competitors.</p>
+                </div>
+            </div>
+        </section>
     </div>
+</main>
+
+<script src="../llcesselx.js"></script>
 <script>
-    function goBack() {
-        console.log("Going to home page....")
-        window.location = "https://llcesselx.github.io/"
-    }
-    function linkedin() {
-        console.log("Going to linkedin...")
-        window.location = "https://www.linkedin.com/in/lea-tice"
-    }
-    function github() {
-        console.log("Going to Github....")
-        window.location = "https://github.com/llcesselx"
-    }
+    // Specific navigation for this page
+    function goBack() { window.history.back(); }
+    function goHome() { window.location.href = "../index.html"; }
 </script>
 </body>
 </html>
