@@ -6,8 +6,7 @@ function goHome() { window.location.href = "../../index.html"; }
 
 // Dynamic Loader for Classics (DT, Cindy, Linda, etc)
 function loadClassic(name) {
-    // Assuming these are in the 'wotd' folder
-    window.location.href = `wotd/wods/${name}.html`;
+    window.location.href = `projects/fitness/wotd/wods/${name}.html`;
 }
 
 // Dynamic Loader for HWPO
