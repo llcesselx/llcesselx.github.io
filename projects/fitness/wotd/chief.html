@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>WOD: The Chief</title>
+  <link rel="stylesheet" href="wods.css"/>
+  <link rel="icon" href="images/crossfitlogo.png"/>
+</head>
+<body onload="getchiefscore()">
+<nav class="nav-header">
+  <button class="back-btn" onclick="back()">← Back</button>
+</nav>
+
+<main class="workout-container">
+  <header class="wod-header">
+    <h1>The Chief</h1>
+    <p class="workout-type">Five 3-Minute AMRAPs</p>
+  </header>
+
+  <section class="interval-card">
+    <div class="interval-header">Each 3-Min Cycle:</div>
+
+    <div class="interval-grid">
+      <div class="work-row tier-1">
+        <span class="movement">3 Power Cleans</span>
+        <span class="timer">135/95 lb</span>
+      </div>
+      <div class="work-row tier-2">
+        <span class="movement">6 Push-Ups</span>
+      </div>
+      <div class="work-row tier-3">
+        <span class="movement">9 Air Squats</span>
+      </div>
+      <div class="rest-row">REST 1 MINUTE BETWEEN CYCLES</div>
+    </div>
+  </section>
+
+  <section class="counter-section">
+    <div class="counter-display">Cycle: <span id="cycleDisplay">0</span> / 5</div>
+    <p style="font-size: 0.8rem; color: #bebebe;">Tap after each 3-minute AMRAP</p>
+    <button class="count-btn" id="cycleBtn" onclick="nextCycle()">COMPLETE CYCLE</button>
+    <button class="reset-btn" onclick="resetChief()">Reset Tracker</button>
+  </section>
+
+  <section class="score-section">
+    <h3>Total Score</h3>
+    <div class="score-inputs">
+      <input type="text" id="userInput" placeholder="Total Rounds + Reps">
+      <button class="save-btn" onclick="setchiefscore()">Save Result</button>
+    </div>
+    <div id="savedScore" class="previous-score"></div>
+  </section>
+
+  <div class="image-container">
+    <img class="workout-img" src="images/navy.png" alt="Chief WOD" style="opacity: 0.2; max-width: 150px;"/>
+  </div>
+</main>
+
+<script src="wods.js"></script>
+<script>
+  let currentCycle = 0;
+
+  function nextCycle() {
+    if (currentCycle < 5) {
+      currentCycle++;
+      document.getElementById('cycleDisplay').innerText = currentCycle;
+
+      if(currentCycle === 5) {
+        document.getElementById('cycleBtn').innerText = "WORKOUT COMPLETE";
+        document.getElementById('cycleBtn').style.background = "#27ae60";
+        alert("All 5 cycles finished! Add up your total rounds.");
+      }
+    }
+  }
+
+  function resetChief() {
+    currentCycle = 0;
+    document.getElementById('cycleDisplay').innerText = "0";
+    document.getElementById('cycleBtn').innerText = "COMPLETE CYCLE";
+    document.getElementById('cycleBtn').style.background = "#00adb5";
+  }
+
+  function back() {
+    window.location.href = "fitness.html";
+  }
+
+  function setchiefscore() {
+    const score = document.getElementById('userInput').value;
+    localStorage.setItem("chiefScore", score);
+    getchiefscore();
+  }
+
+  function getchiefscore() {
+    const saved = localStorage.getItem("chiefScore");
+    if (saved) {
+      document.getElementById('savedScore').innerText = "Personal Best: " + saved;
+    }
+  }
+</script>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

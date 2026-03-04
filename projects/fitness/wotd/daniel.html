@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WOD: Daniel</title>
+  <link rel="stylesheet" href="wods.css"/>
+  <link rel="icon" href="images/crossfitlogo.png"/>
+</head>
+<body onload="getdanielscore()">
+<nav class="nav-header">
+  <button class="back-btn" onclick="back()">← Back</button>
+</nav>
+
+<main class="workout-container">
+  <header class="wod-header">
+    <h1>Daniel</h1>
+    <p class="workout-type">In Honor of Army Sgt 1st Class Daniel Crabtree</p>
+  </header>
+
+  <section class="interval-card">
+    <div class="interval-header">For Time</div>
+
+    <div class="interval-grid">
+      <div class="work-row tier-3" id="step1" onclick="toggleComplete('step1')">
+        <span class="movement">50 Pull-Ups</span>
+      </div>
+      <div class="work-row tier-1" id="step2" onclick="toggleComplete('step2')">
+        <span class="movement">400m Run</span>
+      </div>
+      <div class="work-row tier-2" id="step3" onclick="toggleComplete('step3')">
+        <span class="movement">21 Thrusters</span>
+        <span class="timer">95/65 lb</span>
+      </div>
+      <div class="work-row tier-1" id="step4" onclick="toggleComplete('step4')">
+        <span class="movement">800m Run</span>
+      </div>
+      <div class="work-row tier-2" id="step5" onclick="toggleComplete('step5')">
+        <span class="movement">21 Thrusters</span>
+        <span class="timer">95/65 lb</span>
+      </div>
+      <div class="work-row tier-1" id="step6" onclick="toggleComplete('step6')">
+        <span class="movement">400m Run</span>
+      </div>
+      <div class="work-row tier-3" id="step7" onclick="toggleComplete('step7')">
+        <span class="movement">50 Pull-Ups</span>
+      </div>
+    </div>
+    <p style="font-size: 0.7rem; margin-top: 10px; color: #888;">Tap a movement to mark it finished</p>
+  </section>
+
+  <section class="score-section">
+    <h3>Final Time</h3>
+    <div class="score-inputs">
+      <input type="text" id="userInput" placeholder="MM:SS">
+      <button class="save-btn" onclick="setdanielscore()">Save Result</button>
+    </div>
+    <div id="savedScore" class="previous-score"></div>
+  </section>
+
+  <div class="image-container">
+    <img class="workout-img" src="images/daniel.png" alt="Daniel Hero WOD Memorial"/>
+  </div>
+</main>
+
+<script src="wods.js"></script>
+<script>
+  function toggleComplete(id) {
+    const el = document.getElementById(id);
+    if (el.style.opacity === "0.3") {
+      el.style.opacity = "1";
+      el.style.textDecoration = "none";
+    } else {
+      el.style.opacity = "0.3";
+      el.style.textDecoration = "line-through";
+    }
+  }
+
+  function back() {
+    window.location.href = "fitness.html";
+  }
+
+  function setdanielscore() {
+    const score = document.getElementById('userInput').value;
+    localStorage.setItem("danielScore", score);
+    getdanielscore();
+  }
+
+  function getdanielscore() {
+    const saved = localStorage.getItem("danielScore");
+    if (saved) {
+      document.getElementById('savedScore').innerText = "Personal Best: " + saved;
+    }
+  }
+</script>
+</body>
+</html>
