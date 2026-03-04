@@ -2,36 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOD: DT</title>
+    <link rel="stylesheet" href="wods.css"/>
     <link rel="icon" href="images/crossfitlogo.png"/>
-    <link rel="stylesheet" href="../fitness.css"/>
-    <title>DT</title>
 </head>
 <body onload="getdtscore()">
-    <div class="back-btn" onclick="back()">Back</div>
-    <div class="page-heading">DT</div>
-    <div class="program-one">5 rounds</div>
-    <div class="workout-plan">For Time</div>
-    <hr>
-    <div class="program-one">155/105lb</div>
-    <div class="workout-plan">Deadlift x 12</div>
-    <div class="program-one">155/105lb</div>
-    <div class="workout-plan">Hang Clean x 9</div>
-    <div class="program-one">155/105lb</div>
-    <div class="workout-plan">Push Jerk x 6</div>
-    <div class="container">
-        <img class="image" src="images/lparker.jpg" alt="luke Parker hang cleaning"/>
-    </div>
-    <div class="scorecard">
-        <form id="dt" onsubmit="return false;">
-            <input style="top:80%; left:5%; width:40%; " type="text" placeholder="Enter Score" id="userInput"/>
-            <label for="userInput"></label>
-            <input style="top:50%; left:5%; width: 40%;" type="submit" onclick="setdtscore()"/>
-        </form>
-        <div>
-            <p class="prevScore">
-                Previous Score:  <span id="prevScore"></span>
-            </p>
+<nav class="nav-header">
+    <button class="back-btn" onclick="back()">← Back</button>
+</nav>
+
+<main class="workout-container">
+    <header class="wod-header">
+        <h1>DT</h1>
+        <p class="workout-type">In Honor of USAF SSgt Timothy P. Davis</p>
+    </header>
+
+    <section class="interval-card">
+        <div class="interval-header">5 Rounds For Time</div>
+
+        <div class="interval-grid">
+            <div class="work-row tier-1">
+                <span class="movement">12 Deadlifts</span>
+                <span class="timer">155/105 lb</span>
+            </div>
+            <div class="work-row tier-2">
+                <span class="movement">9 Hang Power Cleans</span>
+                <span class="timer">155/105 lb</span>
+            </div>
+            <div class="work-row tier-3">
+                <span class="movement">6 Push Jerks</span>
+                <span class="timer">155/105 lb</span>
+            </div>
         </div>
+    </section>
+
+    <section class="counter-section">
+        <div class="counter-display"><span id="roundDisplay">0</span> / 5</div>
+        <button class="count-btn" onclick="incrementRound()">+ COMPLETE ROUND</button>
+        <button class="reset-btn" onclick="resetCounter()">Reset</button>
+    </section>
+
+    <section class="score-section">
+        <h3>Final Time</h3>
+        <div class="score-inputs">
+            <input type="text" id="userInput" placeholder="MM:SS">
+            <button class="save-btn" onclick="setdtscore()">Save Result</button>
+        </div>
+        <div id="savedScore" class="previous-score"></div>
+    </section>
+
+    <div class="image-container">
+        <img class="workout-img" src="images/lparker.jpg" alt="Luke Parker hang cleaning"/>
     </div>
+</main>
+
+<script src="wods.js"></script>
+<script>
+    let currentRounds = 0;
+
+    function incrementRound() {
+        if (currentRounds < 5) {
+            currentRounds++;
+            document.getElementById('roundDisplay').innerText = currentRounds;
+        }
+        if (currentRounds === 5) {
+            alert("Workout Complete! Enter your time below.");
+        }
+    }
+
+    function resetCounter() {
+        currentRounds = 0;
+        document.getElementById('roundDisplay').innerText = currentRounds;
+    }
+
+    function back() {
+        window.location.href = "fitness.html";
+    }
+
+    function setdtscore() {
+        const score = document.getElementById('userInput').value;
+        localStorage.setItem("dtScore", score);
+        getdtscore();
+    }
+
+    function getdtscore() {
+        const saved = localStorage.getItem("dtScore");
+        if (saved) {
+            document.getElementById('savedScore').innerText = "Personal Best: " + saved;
+        }
+    }
+</script>
 </body>
 </html>

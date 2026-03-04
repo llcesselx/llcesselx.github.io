@@ -1,76 +1,176 @@
+/* wods.css */
 body {
-    display: grid;
-    grid-template-columns: 7fr;
-    grid-template-rows: 7fr;
-    background-color: white;
-}
-.back-btn {
-    position: absolute;
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background: black;
-    color: white;
-}
-.back-btn:hover {
-    cursor: pointer;
-    background: white;
-    color: black;
-}
-.heading {
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    font-size: xxx-large;
-    justify-self: center;
-    padding: 15px 60px;
-    border: solid black 5px;
-    border-radius: 10px;
-    margin: 15px;
-}
-.exercise-block{
-    border: solid black 5px;
-    padding: 10px;
-    border-radius: 10px;
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 2;
-    grid-row-end: 7;
+    background: #222831;
+    color: #eeeeee;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-header {
+    width: 100%;
+    padding: 20px;
+}
+
+.back-btn {
+    background: transparent;
+    border: 2px solid #00adb5;
+    color: #00adb5;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.workout-container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.wod-header h1 {
+    font-size: 2.5rem;
+    color: #00adb5;
+    margin-bottom: 5px;
+}
+
+.workout-type {
+    font-style: italic;
+    color: #bebebe;
+}
+
+/* INTERVAL CARD */
+.interval-card {
+    background: #393e46;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 30px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.interval-header {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #4e545e;
+    padding-bottom: 10px;
+}
+
+.interval-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.work-row {
+    background: #00adb5;
+    color: #222831;
+    display: flex;
     justify-content: space-between;
-}
-.break {
-    flex-basis: 100%;
-    height: 0;
-}
-.rest {
-    margin: 15px;
-}
-.exercise {
-    padding: 15px 20px;
-    font-weight: bolder;
-    font-size: 24px;
-}
-.explain {
-    font-weight: normal;
-    padding: 15px 20px;
+    padding: 12px 20px;
+    border-radius: 5px;
     font-weight: bold;
-    font-size: 20px;
-    flex-basis: 100%;
 }
-.exercisetime {
-    padding: 15px 20px;
+
+.rest-row {
+    background: #2d333b;
+    padding: 5px;
+    font-size: 0.8rem;
+    color: #ff5722; /* Red-ish for rest */
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+/* Highlight tiers as it gets harder */
+.tier-2 { background: #00979e; }
+.tier-3 { background: #007a80; }
+
+/* SCORE SECTION */
+.score-section {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #393e46;
+}
+
+.score-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background: #393e46;
+    color: white;
+    text-align: center;
+}
+
+.save-btn {
+    background: #00adb5;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    color: #222831;
     font-weight: bold;
-    font-size: 20px;
+    cursor: pointer;
 }
-.howto {
-    flex-basis: 100%;
-    justify-self: center;
-    border: solid black 5px;
-    padding: 15px;
-    border-radius: 10px;
+
+/* Round Counter Styles */
+.counter-section {
+    background: #393e46;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.counter-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #00adb5;
+}
+
+.count-btn {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.2rem;
+    background: #00adb5;
+    color: #222831;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.reset-btn {
+    background: transparent;
+    color: #ff5722;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Image Handling */
+.image-container {
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    opacity: 0.7;
+}
+
+.workout-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.previous-score {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #00adb5;
+    font-weight: bold;
 }

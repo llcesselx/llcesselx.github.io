@@ -2,41 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOD: Linda</title>
+    <link rel="stylesheet" href="wods.css"/>
     <link rel="icon" href="images/crossfitlogo.png"/>
-    <link rel="stylesheet" href="../fitness.css"/>
-    <title>Linda</title>
-    <style>
-        .program-one {
-            font-size: 18px;
-        }
-    </style>
 </head>
 <body onload="getlindascore()">
-<div class="back-btn" onclick="back()">Back</div>
-<div class="page-heading">Linda</div>
-<div class="program-one">10-9-8-7-6-5-4-3-2-1</div>
-<div class="workout-plan">For Time</div>
-<hr>
-<div class="program-one">1 1/2 Bodyweight</div>
-<div class="workout-plan">Deadlift</div>
-<div class="program-one">Bodyweight</div>
-<div class="workout-plan">Bench Press</div>
-<div class="program-one">3/4 Bodyweight</div>
-<div class="workout-plan">Cleans</div>
-<div class="container">
-    <img class="image" src="images/lparker2.jpg" alt="luke Parker hang cleaning"/>
-</div>
-<div class="scorecard">
-    <form id="dt" onsubmit="return false;">
-        <input style="top:80%; left:5%; width:40%; " type="text" placeholder="Enter Score" id="userInput"/>
-        <label for="userInput"></label>
-        <input style="top:50%; left:5%; width: 40%;" type="submit" onclick="setlindascore()"/>
-    </form>
-    <div>
-        <p class="prevScore">
-            Previous Score:  <span id="prevScore"></span>
-        </p>
+<nav class="nav-header">
+    <button class="back-btn" onclick="back()">← Back</button>
+</nav>
+
+<main class="workout-container">
+    <header class="wod-header">
+        <h1>Linda</h1>
+        <p class="workout-type">"3 Bars of Death" - For Time</p>
+    </header>
+
+    <section class="interval-card">
+        <div class="interval-header">10-9-8-7-6-5-4-3-2-1 Reps Of:</div>
+
+        <div class="interval-grid">
+            <div class="work-row tier-1">
+                <span class="movement">Deadlift</span>
+                <span class="timer">1.5 x Bodyweight</span>
+            </div>
+            <div class="work-row tier-2">
+                <span class="movement">Bench Press</span>
+                <span class="timer">1.0 x Bodyweight</span>
+            </div>
+            <div class="work-row tier-3">
+                <span class="movement">Clean</span>
+                <span class="timer">0.75 x Bodyweight</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="counter-section">
+        <div class="counter-display">Set: <span id="setTracker">10</span></div>
+        <p style="font-size: 0.8rem; color: #bebebe;">Taps remaining sets as you finish them</p>
+        <button class="count-btn" id="trackBtn" onclick="nextSet()">FINISH SET OF 10</button>
+        <button class="reset-btn" onclick="resetLinda()">Reset Tracker</button>
+    </section>
+
+    <section class="score-section">
+        <h3>Final Time</h3>
+        <div class="score-inputs">
+            <input type="text" id="userInput" placeholder="MM:SS">
+            <button class="save-btn" onclick="setlindascore()">Save Result</button>
+        </div>
+        <div id="savedScore" class="previous-score"></div>
+    </section>
+
+    <div class="image-container">
+        <img class="workout-img" src="images/lparker2.jpg" alt="Luke Parker performing cleans"/>
     </div>
-</div>
+</main>
+
+<script src="wods.js"></script>
+<script>
+    let currentReps = 10;
+
+    function nextSet() {
+        if (currentReps > 1) {
+            currentReps--;
+            document.getElementById('setTracker').innerText = currentReps;
+            document.getElementById('trackBtn').innerText = `FINISH SET OF ${currentReps}`;
+        } else if (currentReps === 1) {
+            document.getElementById('setTracker').innerText = "DONE";
+            document.getElementById('trackBtn').innerText = "WORKOUT COMPLETE";
+            document.getElementById('trackBtn').style.background = "#27ae60";
+            alert("Time! Check your watch and log your score.");
+        }
+    }
+
+    function resetLinda() {
+        currentReps = 10;
+        document.getElementById('setTracker').innerText = "10";
+        document.getElementById('trackBtn').innerText = "FINISH SET OF 10";
+        document.getElementById('trackBtn').style.background = "#00adb5";
+    }
+
+    function back() {
+        window.location.href = "fitness.html";
+    }
+
+    function setlindascore() {
+        const score = document.getElementById('userInput').value;
+        localStorage.setItem("lindaScore", score);
+        getlindascore();
+    }
+
+    function getlindascore() {
+        const saved = localStorage.getItem("lindaScore");
+        if (saved) {
+            document.getElementById('savedScore').innerText = "Personal Best: " + saved;
+        }
+    }
+</script>
 </body>
 </html>

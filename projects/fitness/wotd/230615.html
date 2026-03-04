@@ -2,45 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>230615</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOD: Thursday 230615</title>
     <link rel="stylesheet" href="wods.css"/>
     <link rel="icon" href="images/crossfitlogo.png"/>
 </head>
 <body>
-    <div class="back-btn" onclick="goBack()">Back</div>
-        <div class="heading">Thursday 230615</div>
-        <div class="exercise-block">
-        <div class="howto">3 x 6-minute rounds, for max/reps</div>
-        <div class="break"></div>
-        <div class="exercise">Bike</div>
-        <div class="exercisetime">20 seconds</div>
-        <div class="break"></div>
-        <div class="rest">40 second rest</div>
-        <div class="break"></div>
-        <div class="exercise">Burpee</div>
-        <div class="exercisetime">20 seconds</div>
-        <div class="break"></div>
-        <div class="rest">40 second rest</div>
-        <div class="break"></div>
-        <div class="exercise">Bike</div>
-        <div class="exercisetime">30 seconds</div>
-        <div class="break"></div>
-        <div class="rest">30 second rest</div>
-        <div class="break"></div>
-        <div class="exercise">Burpee</div>
-        <div class="exercisetime">30 seconds</div>
-        <div class="break"></div>
-        <div class="rest">30 second rest</div>
-        <div class="break"></div>
-        <div class="exercise">Bike</div>
-        <div class="exercisetime">40 seconds</div>
-        <div class="break"></div>
-        <div class="rest">20 second rest</div>
-        <div class="break"></div>
-        <div class="exercise">Burpeee</div>
-        <div class="exercisetime">40 seconds</div>
-        <div class="break"></div>
-        <div class="rest">20 second rest</div>
-    </div>
+<nav class="nav-header">
+    <button class="back-btn" onclick="goBack()">← Back</button>
+</nav>
+
+<main class="workout-container">
+    <header class="wod-header">
+        <h1>Thursday 230615</h1>
+        <p class="workout-type">3 Rounds for Max Reps/Calories</p>
+    </header>
+
+    <section class="interval-card">
+        <div class="interval-header">Round Structure (Repeat 3x)</div>
+
+        <div class="interval-grid">
+            <div class="work-row">
+                <span class="movement">Bike</span>
+                <span class="timer">20s Work</span>
+            </div>
+            <div class="rest-row">40s Rest</div>
+
+            <div class="work-row">
+                <span class="movement">Burpee</span>
+                <span class="timer">20s Work</span>
+            </div>
+            <div class="rest-row">40s Rest</div>
+
+            <div class="work-row tier-2">
+                <span class="movement">Bike</span>
+                <span class="timer">30s Work</span>
+            </div>
+            <div class="rest-row">30s Rest</div>
+
+            <div class="work-row tier-2">
+                <span class="movement">Burpee</span>
+                <span class="timer">30s Work</span>
+            </div>
+            <div class="rest-row">30s Rest</div>
+
+            <div class="work-row tier-3">
+                <span class="movement">Bike</span>
+                <span class="timer">40s Work</span>
+            </div>
+            <div class="rest-row">20s Rest</div>
+
+            <div class="work-row tier-3">
+                <span class="movement">Burpee</span>
+                <span class="timer">40s Work</span>
+            </div>
+            <div class="rest-row">20s Rest</div>
+        </div>
+    </section>
+
+    <section class="score-section">
+        <h3>Log Your Results</h3>
+        <div class="score-inputs">
+            <input type="number" id="bikeCals" placeholder="Total Bike Cals">
+            <input type="number" id="burpeeReps" placeholder="Total Burpees">
+            <button class="save-btn" onclick="saveScore()">Save WOD</button>
+        </div>
+    </section>
+</main>
+
+<script src="wods.js"></script>
+<script>
+    function goBack() {
+        window.location.href = "../fitness.html";
+    }
+
+    function saveScore() {
+        const cals = document.getElementById('bikeCals').value;
+        const reps = document.getElementById('burpeeReps').value;
+        alert(`Score Saved! \nBike: ${cals} Cals \nBurpees: ${reps} Reps`);
+        // You can add cookie/localstorage logic here later
+    }
+</script>
 </body>
 </html>

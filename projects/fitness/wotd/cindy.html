@@ -2,41 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WOD: Cindy</title>
+  <link rel="stylesheet" href="wods.css"/>
   <link rel="icon" href="images/crossfitlogo.png"/>
-  <link rel="stylesheet" href="../fitness.css"/>
-  <title>Cindy</title>
-  <style>
-    .workout-plan {
-      font-size: 16px;
-    }
-  </style>
 </head>
 <body onload="getcindyscore()">
-<div class="back-btn" onclick="back()">Back</div>
-<div class="page-heading">Cindy</div>
-<div class="program-one">20 Mins</div>
-<div class="workout-plan">AMRAP</div>
-<hr>
-<div class="program-one">Bodyweight</div>
-<div class="workout-plan">Chest-to-Bar Pullups</div>
-<div class="program-one">Bodyweight</div>
-<div class="workout-plan">Ring Dips</div>
-<div class="program-one">95/65lb</div>
-<div class="workout-plan">Overhead Squat</div>
-<div class="container">
-  <img class="image" src="images/lparker3.jpg" alt="lukeparkerrings"/>
-</div>
-<div class="scorecard">
-  <form id="dt" onsubmit="return false;">
-    <input style="top:80%; left:5%; width:40%; " type="text" placeholder="Enter Score" id="userInput"/>
-    <label for="userInput"></label>
-    <input style="top:50%; left:5%; width: 40%;" type="submit" onclick="setcindyscore()"/>
-  </form>
-  <div>
-    <p class="prevScore">
-      Previous Score:  <span id="prevScore"></span>
-    </p>
+<nav class="nav-header">
+  <button class="back-btn" onclick="back()">← Back</button>
+</nav>
+
+<main class="workout-container">
+  <header class="wod-header">
+    <h1>Cindy</h1>
+    <p class="workout-type">20 Minute AMRAP</p>
+  </header>
+
+  <section class="interval-card">
+    <div class="interval-header">1 Round Consists Of:</div>
+
+    <div class="interval-grid">
+      <div class="work-row tier-1">
+        <span class="movement">5 Pull-Ups</span>
+      </div>
+      <div class="work-row tier-2">
+        <span class="movement">10 Push-Ups</span>
+      </div>
+      <div class="work-row tier-3">
+        <span class="movement">15 Air Squats</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="counter-section">
+    <div class="counter-display" id="roundDisplay">0</div>
+    <button class="count-btn" onclick="incrementRound()">+ ADD ROUND</button>
+    <button class="reset-btn" onclick="resetCounter()">Reset</button>
+  </section>
+
+  <section class="score-section">
+    <h3>Final Score</h3>
+    <div class="score-inputs">
+      <input type="text" id="userInput" placeholder="Total Rounds + Reps">
+      <button class="save-btn" onclick="setcindyscore()">Save Result</button>
+    </div>
+    <div id="savedScore" class="previous-score"></div>
+  </section>
+
+  <div class="image-container">
+    <img class="workout-img" src="images/lparker3.jpg" alt="Athlete Training"/>
   </div>
-</div>
+</main>
+
+<script src="wods.js"></script>
+<script>
+  let currentRounds = 0;
+
+  function incrementRound() {
+    currentRounds++;
+    document.getElementById('roundDisplay').innerText = currentRounds;
+  }
+
+  function resetCounter() {
+    currentRounds = 0;
+    document.getElementById('roundDisplay').innerText = currentRounds;
+  }
+
+  function back() {
+    window.location.href = "fitness.html";
+  }
+
+  // Logic to interface with your existing storage
+  function setcindyscore() {
+    const score = document.getElementById('userInput').value;
+    localStorage.setItem("cindyScore", score);
+    getcindyscore();
+  }
+
+  function getcindyscore() {
+    const saved = localStorage.getItem("cindyScore");
+    if (saved) {
+      document.getElementById('savedScore').innerText = "Personal Best: " + saved;
+    }
+  }
+</script>
 </body>
 </html>
