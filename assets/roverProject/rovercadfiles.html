@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISU Rover | CAD Inspection</title>
+    <link rel="stylesheet" href="rover-style.css"/>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+<nav class="nav-header">
+    <button class="btn-isu" onclick="history.back()">← Return to Portfolio</button>
+</nav>
+
+<main class="container">
+    <header class="project-title">
+        <h1 id="partName">Rescue Rover Assembly</h1>
+        <p style="color: var(--isu-silver); font-weight: bold; margin-top: 10px;">Computer Engineering Senior Capstone</p>
+    </header>
+
+    <div class="gallery-card">
+        <button class="nav-arrow prev" onclick="changeModel(-1)">&#10094;</button>
+
+        <model-viewer
+                id="mainViewer"
+                src="assets/rover_full.glb"
+                alt="ISU Rover Project"
+                auto-rotate camera-controls
+                shadow-intensity="1.5"
+                background-color="#000000">
+        </model-viewer>
+
+        <button class="nav-arrow next" onclick="changeModel(1)">&#10095;</button>
+    </div>
+
+    <section class="info-panel">
+        <h3><span class="status-indicator"></span> <span id="captionTitle">Full Assembly</span></h3>
+        <p id="captionText" style="line-height: 1.8;">Technical overview of the dual-node robotics platform designed at Indiana State University.</p>
+    </section>
+</main>
+
+<script>
+    // Update your assets here
+    const models = [
+        {
+            file: "assets/roverProject/cad/RRMount.glb",
+            name: "Right Rear Motor Mount",
+            title: "Rear Propulsion System",
+            desc: "The mount that our 1:90 gearbox motor will sit in for our right rear side, the left rear side is the same mount but mirrored."
+        },
+        {
+            file: "assets/roverProject/cad/WheelShaft.glb",
+            name: "Wheel Mount",
+            title: "Custom Wheel Shaft",
+            desc: "Custom made wheel shafts that fit on the inside of our hexagon fitted 1.9 inch diameter wheels to mount our tires to the motors."
+        }
+    ];
+
+    let idx = 0;
+    function changeModel(step) {
+        idx = (idx + step + models.length) % models.length;
+        document.getElementById('mainViewer').src = models[idx].file;
+        document.getElementById('partName').innerText = models[idx].name;
+        document.getElementById('captionTitle').innerText = models[idx].title;
+        document.getElementById('captionText').innerText = models[idx].desc;
+    }
+</script>
+</body>
+</html>
