@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Streamer Phasmo Tracker</title>
+  <style>
+    :root {
+      --bg: rgba(20, 20, 20, 0.85);
+      --text: #e0e0e0;
+      --found: #4CAF50;
+      --ruled: #F44336;
+      --neutral: #444;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: transparent;
+      color: var(--text);
+      margin: 0; padding: 10px;
+      width: 350px; /* Adjust based on your OBS layout */
+    }
+    .container {
+      background: var(--bg);
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 5px solid #666;
+    }
+    h2 { margin-top: 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; color: #aaa; }
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .ev-btn {
+      background: var(--neutral);
+      border: none;
+      color: white;
+      padding: 8px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      text-align: left;
+      transition: 0.2s;
+    }
+    .ev-btn.found { background: var(--found); font-weight: bold; }
+    .ev-btn.ruled { background: var(--ruled); text-decoration: line-through; opacity: 0.6; }
+
+    .ghost-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      font-size: 0.85rem;
+    }
+    .ghost {
+      background: #333;
+      padding: 4px 8px;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+    .ghost.impossible {
+      opacity: 0.15;
+      text-decoration: line-through;
+      order: 2; /* Moves impossible ghosts to the bottom */
+    }
+    .controls { margin-top: 15px; border-top: 1px solid #555; padding-top: 10px; }
+    button#reset { background: #555; border: none; color: white; padding: 5px 10px; cursor: pointer; width: 100%; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Evidence Tracker</h2>
+  <div class="evidence-grid" id="evidence-grid"></div>
+
+  <h2>Possible Ghosts</h2>
+  <div class="ghost-list" id="ghost-list"></div>
+
+  <div class="controls">
+    <button id="reset" onclick="resetTracker()">Reset Investigation</button>
+  </div>
+</div>
+
+<script>
+  const evidenceTypes = ["EMF 5", "Spirit Box", "Ultraviolet", "Ghost Writing", "Freezing", "Ghost Orb", "DOTS"];
+
+  // 2026 Ghost Data
+  const ghosts = [
+    { name: "Banshee", ev: ["DOTS", "Ghost Orb", "Ultraviolet"] },
+    { name: "Dayan", ev: ["EMF 5", "Ghost Orb", "Spirit Box"] },
+    { name: "Demon", ev: ["Ghost Writing", "Freezing", "Ultraviolet"] },
+    { name: "Deogen", ev: ["Spirit Box", "Ghost Writing", "DOTS"] },
+    { name: "Gallu", ev: ["Ultraviolet", "Ghost Writing", "Freezing"] },
+    { name: "Goryo", ev: ["EMF 5", "DOTS", "Ultraviolet"] },
+    { name: "Hantu", ev: ["Freezing", "Ghost Orb", "Ultraviolet"] },
+    { name: "Jinn", ev: ["EMF 5", "Freezing", "Ultraviolet"] },
+    { name: "Mare", ev: ["Spirit Box", "Ghost Writing", "Ghost Orb"] },
+    { name: "Mimic", ev: ["Spirit Box", "Freezing", "Ultraviolet"] }, // Mimic has fake orbs, logic below
+    { name: "Moroi", ev: ["Spirit Box", "Ghost Writing", "Freezing"] },
+    { name: "Myling", ev: ["EMF 5", "Ghost Writing", "Ultraviolet"] },
+    { name: "Obake", ev: ["EMF 5", "Ghost Orb", "Ultraviolet"] },
+    { name: "Obambo", ev: ["Ghost Writing", "Ultraviolet", "DOTS"] },
+    { name: "Oni", ev: ["EMF 5", "Freezing", "DOTS"] },
+    { name: "Onryo", ev: ["Spirit Box", "Ghost Orb", "Freezing"] },
+    { name: "Phantom", ev: ["Spirit Box", "DOTS", "Freezing"] },
+    { name: "Poltergeist", ev: ["Spirit Box", "Ghost Writing", "Ultraviolet"] },
+    { name: "Raiju", ev: ["EMF 5", "DOTS", "Ghost Orb"] },
+    { name: "Revenant", ev: ["Ghost Writing", "Freezing", "Ghost Orb"] },
+    { name: "Shade", ev: ["EMF 5", "Ghost Writing", "Freezing"] },
+    { name: "Spirit", ev: ["EMF 5", "Ghost Writing", "Spirit Box"] },
+    { name: "Thaye", ev: ["Ghost Orb", "Ghost Writing", "DOTS"] },
+    { name: "Twins", ev: ["EMF 5", "Spirit Box", "Freezing"] },
+    { name: "Wraith", ev: ["EMF 5", "Spirit Box", "DOTS"] },
+    { name: "Yokai", ev: ["Spirit Box", "DOTS", "Ghost Orb"] },
+    { name: "Yurei", ev: ["DOTS", "Freezing", "Ghost Orb"] }
+  ];
+
+  let state = {}; // 0: Neutral, 1: Found, 2: Ruled Out
+  evidenceTypes.forEach(e => state[e] = 0);
+
+  function render() {
+    const grid = document.getElementById('evidence-grid');
+    grid.innerHTML = '';
+    evidenceTypes.forEach(e => {
+      const btn = document.createElement('button');
+      btn.className = `ev-btn ${state[e] === 1 ? 'found' : state[e] === 2 ? 'ruled' : ''}`;
+      btn.innerText = e;
+      btn.onclick = () => {
+        state[e] = (state[e] + 1) % 3;
+        render();
+      };
+      grid.appendChild(btn);
+    });
+
+    const list = document.getElementById('ghost-list');
+    list.innerHTML = '';
+    ghosts.forEach(g => {
+      const span = document.createElement('span');
+      span.className = 'ghost';
+      span.innerText = g.name;
+
+      // Filtering Logic
+      let foundMatch = true;
+      let ruledOut = false;
+
+      for (const [ev, val] of Object.entries(state)) {
+        if (val === 1) {
+          // Specific Mimic Logic: Orbs don't rule out Mimic because they are fake
+          if (!g.ev.includes(ev) && !(g.name === "Mimic" && ev === "Ghost Orb")) foundMatch = false;
+        }
+        if (val === 2) {
+          if (g.ev.includes(ev)) ruledOut = true;
+        }
+      }
+
+      if (!foundMatch || ruledOut) span.classList.add('impossible');
+      list.appendChild(span);
+    });
+  }
+
+  function resetTracker() {
+    evidenceTypes.forEach(e => state[e] = 0);
+    render();
+  }
+
+  render();
+</script>
+
+</body>
+</html>
