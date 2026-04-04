@@ -2,187 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Streamer Phasmo Tracker</title>
+  <title>Advanced Phasmo Stream Overlay</title>
   <style>
     :root {
-      --bg: rgba(20, 20, 20, 0.85);
-      --text: #e0e0e0;
-      --found: #4CAF50;
-      --ruled: #F44336;
-      --neutral: #444;
+      --bg: rgba(15, 15, 15, 0.9);
+      --accent: #ff4444;
+      --text: #ffffff;
+      --panel-bg: #222;
     }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: transparent;
-      color: var(--text);
-      margin: 0; padding: 10px;
-      width: 350px; /* Adjust based on your OBS layout */
-    }
-    .container {
-      background: var(--bg);
-      padding: 15px;
-      border-radius: 8px;
-      border-left: 5px solid #666;
-    }
-    h2 { margin-top: 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; color: #aaa; }
-    .evidence-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .ev-btn {
-      background: var(--neutral);
-      border: none;
-      color: white;
-      padding: 8px;
-      cursor: pointer;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      text-align: left;
-      transition: 0.2s;
-    }
-    .ev-btn.found { background: var(--found); font-weight: bold; }
-    .ev-btn.ruled { background: var(--ruled); text-decoration: line-through; opacity: 0.6; }
+    body { font-family: 'Courier New', Courier, monospace; color: var(--text); background: transparent; margin: 0; width: 380px; overflow: hidden; }
+    .container { background: var(--bg); padding: 15px; border: 2px solid #444; border-radius: 10px; animation: flicker 5s infinite; }
 
-    .ghost-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      font-size: 0.85rem;
-    }
-    .ghost {
-      background: #333;
-      padding: 4px 8px;
-      border-radius: 3px;
-      /* This handles the animation when the class changes */
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 1;
-      transform: scale(1);
-      display: inline-block; /* Required for transform to work well */
-    }
-    .ghost.impossible {
-      opacity: 0.1;
-      /* Fixed: transform only handles geometry (scale, rotate, move) */
-      transform: scale(0.8);
-      /* Fixed: filter handles visual effects like grayscale */
-      filter: grayscale(100%);
-      order: 2;
-      pointer-events: none;
-    }
-    .controls { margin-top: 15px; border-top: 1px solid #555; padding-top: 10px; }
-    button#reset { background: #555; border: none; color: white; padding: 5px 10px; cursor: pointer; width: 100%; border-radius: 4px; }
+    /* Sanity Section */
+    .section { background: var(--panel-bg); padding: 10px; border-radius: 5px; margin-bottom: 10px; border: 1px solid #333; }
+    .header { font-size: 0.8rem; color: #888; text-transform: uppercase; margin-bottom: 5px; border-bottom: 1px solid #444; }
+    .sanity-val { font-size: 2rem; font-weight: bold; color: var(--accent); text-align: center; }
+    .row { display: flex; gap: 5px; margin-bottom: 5px; }
+    select, button { background: #333; color: white; border: 1px solid #555; padding: 5px; flex: 1; cursor: pointer; }
+
+    /* Evidence Grid */
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+    .ev-btn { font-size: 0.75rem; text-align: left; transition: 0.2s; }
+    .ev-btn.found { background: #2ecc71; border-color: #27ae60; }
+    .ev-btn.ruled { background: #e74c3c; opacity: 0.4; text-decoration: line-through; }
+
+    /* Speed Tapper */
+    #speed-display { font-size: 1.2rem; text-align: center; color: #f1c40f; margin-top: 5px; }
+
+    /* Ghost List */
+    .ghost-list { display: flex; flex-wrap: wrap; gap: 4px; font-size: 0.7rem; }
+    .ghost { background: #333; padding: 2px 6px; border-radius: 2px; transition: 0.3s; }
+    .ghost.impossible { opacity: 0.1; order: 2; transform: scale(0.8); }
 
     @keyframes flicker {
-      0% { opacity: 0.98; }
-      5% { opacity: 0.95; }
-      10% { opacity: 0.9; }
-      15% { opacity: 0.98; }
-      30% { opacity: 0.95; }
-      50% { opacity: 0.98; }
-      100% { opacity: 1; }
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.9; }
     }
-
-    .container {
-      animation: flicker 3s infinite;
-      /* Adding a subtle glow */
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); box-shadow: 0 0 10px var(--found); }
-      100% { transform: scale(1); }
-    }
-
-    .ev-btn.found {
-      background: var(--found);
-      font-weight: bold;
-      animation: pulse 0.5s ease-in-out;
-    }
-
-    .glitch {
-      position: relative;
-      animation: glitch-skew 4s infinite linear alternate-reverse;
-    }
-
-    @keyframes glitch-skew {
-      0% { transform: skew(1deg); }
-      10% { transform: skew(-1deg); }
-      20% { transform: skew(0deg); }
-      100% { transform: skew(0deg); }
-    }
-
-    /* Add more aggressive glitches here if you're feeling brave! */
-
   </style>
 </head>
-
-
-
-
 <body>
 
 <div class="container">
-  <h2>Evidence Tracker</h2>
-  <div class="evidence-grid" id="evidence-grid"></div>
-
-  <h2>Possible Ghosts</h2>
-  <div class="ghost-list" id="ghost-list"></div>
-
-  <div class="controls">
-    <button id="reset" onclick="resetTracker()">Reset Investigation</button>
+  <div class="section">
+    <div class="header">Est. Team Sanity</div>
+    <div class="sanity-val" id="sanity-display">100%</div>
+    <div class="row">
+      <select id="map-size">
+        <option value="0.12">Small Map</option>
+        <option value="0.08">Medium Map</option>
+        <option value="0.05">Large Map</option>
+      </select>
+      <select id="difficulty">
+        <option value="1">Amateur (1x)</option>
+        <option value="1.5">Inter. (1.5x)</option>
+        <option value="2">Pro/Insane (2x)</option>
+      </select>
+    </div>
+    <button onclick="toggleSanity()" id="sanity-toggle">Start Investigation</button>
   </div>
+
+  <div class="section">
+    <div class="header">Evidence</div>
+    <div class="grid" id="evidence-grid"></div>
+  </div>
+
+  <div class="section">
+    <div class="header">Footstep Speed (Tap to Time)</div>
+    <button id="tap-btn" style="height: 40px; font-weight: bold; background: #444;">TAP ALONG TO FEET</button>
+    <div id="speed-display">--- m/s</div>
+  </div>
+
+  <div class="section">
+    <div class="header">Possible Matches</div>
+    <div class="ghost-list" id="ghost-list"></div>
+  </div>
+
+  <button onclick="resetAll()" style="width:100%; margin-top:10px; color:#888;">HARD RESET</button>
 </div>
 
 <script>
+  // --- DATA ---
   const evidenceTypes = ["EMF 5", "Spirit Box", "Ultraviolet", "Ghost Writing", "Freezing", "Ghost Orb", "DOTS"];
-
-  // 2026 Ghost Data
   const ghosts = [
-    { name: "Banshee", ev: ["DOTS", "Ghost Orb", "Ultraviolet"] },
-    { name: "Dayan", ev: ["EMF 5", "Ghost Orb", "Spirit Box"] },
-    { name: "Demon", ev: ["Ghost Writing", "Freezing", "Ultraviolet"] },
-    { name: "Deogen", ev: ["Spirit Box", "Ghost Writing", "DOTS"] },
-    { name: "Gallu", ev: ["Ultraviolet", "Ghost Writing", "Freezing"] },
-    { name: "Goryo", ev: ["EMF 5", "DOTS", "Ultraviolet"] },
-    { name: "Hantu", ev: ["Freezing", "Ghost Orb", "Ultraviolet"] },
-    { name: "Jinn", ev: ["EMF 5", "Freezing", "Ultraviolet"] },
-    { name: "Mare", ev: ["Spirit Box", "Ghost Writing", "Ghost Orb"] },
-    { name: "Mimic", ev: ["Spirit Box", "Freezing", "Ultraviolet"] }, // Mimic has fake orbs, logic below
-    { name: "Moroi", ev: ["Spirit Box", "Ghost Writing", "Freezing"] },
-    { name: "Myling", ev: ["EMF 5", "Ghost Writing", "Ultraviolet"] },
-    { name: "Obake", ev: ["EMF 5", "Ghost Orb", "Ultraviolet"] },
-    { name: "Obambo", ev: ["Ghost Writing", "Ultraviolet", "DOTS"] },
-    { name: "Oni", ev: ["EMF 5", "Freezing", "DOTS"] },
-    { name: "Onryo", ev: ["Spirit Box", "Ghost Orb", "Freezing"] },
-    { name: "Phantom", ev: ["Spirit Box", "DOTS", "Freezing"] },
-    { name: "Poltergeist", ev: ["Spirit Box", "Ghost Writing", "Ultraviolet"] },
-    { name: "Raiju", ev: ["EMF 5", "DOTS", "Ghost Orb"] },
-    { name: "Revenant", ev: ["Ghost Writing", "Freezing", "Ghost Orb"] },
-    { name: "Shade", ev: ["EMF 5", "Ghost Writing", "Freezing"] },
-    { name: "Spirit", ev: ["EMF 5", "Ghost Writing", "Spirit Box"] },
-    { name: "Thaye", ev: ["Ghost Orb", "Ghost Writing", "DOTS"] },
-    { name: "Twins", ev: ["EMF 5", "Spirit Box", "Freezing"] },
-    { name: "Wraith", ev: ["EMF 5", "Spirit Box", "DOTS"] },
-    { name: "Yokai", ev: ["Spirit Box", "DOTS", "Ghost Orb"] },
-    { name: "Yurei", ev: ["DOTS", "Freezing", "Ghost Orb"] }
+    { name: "Dayan", ev: ["EMF 5", "Ghost Orb", "Spirit Box"], speed: "2.25" },
+    { name: "Deogen", ev: ["Spirit Box", "Ghost Writing", "DOTS"], speed: "Variable" },
+    { name: "Moroi", ev: ["Spirit Box", "Ghost Writing", "Freezing"], speed: "Fast" },
+    { name: "Revenant", ev: ["Ghost Writing", "Freezing", "Ghost Orb"], speed: "Very Fast" },
+    { name: "Thaye", ev: ["Ghost Orb", "Ghost Writing", "DOTS"], speed: "Aggressive" },
+    { name: "Obambo", ev: ["Ghost Writing", "Ultraviolet", "DOTS"], speed: "1.95" },
+    { name: "Gallu", ev: ["Ultraviolet", "Ghost Writing", "Freezing"], speed: "Variable" }
+    // ... (Add standard ghosts here as needed)
   ];
 
-  let state = {}; // 0: Neutral, 1: Found, 2: Ruled Out
-  evidenceTypes.forEach(e => state[e] = 0);
+  // --- STATE ---
+  let state = { sanity: 100, isRunning: false, evidence: {} };
+  evidenceTypes.forEach(e => state.evidence[e] = 0);
+  let lastTap = 0;
+  let tapDiffs = [];
 
+  // --- SANITY LOGIC ---
+  function updateSanity() {
+    if (!state.isRunning) return;
+    const rate = parseFloat(document.getElementById('map-size').value);
+    const mult = parseFloat(document.getElementById('difficulty').value);
+    state.sanity -= (rate * mult) / 10; // Simple drain logic
+    if (state.sanity < 0) state.sanity = 0;
+    document.getElementById('sanity-display').innerText = Math.floor(state.sanity) + "%";
+    setTimeout(updateSanity, 1000);
+  }
+
+  function toggleSanity() {
+    state.isRunning = !state.isRunning;
+    document.getElementById('sanity-toggle').innerText = state.isRunning ? "Pause Timer" : "Resume Timer";
+    if (state.isRunning) updateSanity();
+  }
+
+  // --- SPEED TAPPER LOGIC ---
+  document.getElementById('tap-btn').addEventListener('mousedown', (e) => {
+    const now = Date.now();
+    if (lastTap > 0) {
+      const diff = now - lastTap;
+      if (diff < 2000) { // Only count taps within 2 seconds
+        tapDiffs.push(diff);
+        if (tapDiffs.length > 5) tapDiffs.shift();
+        const avg = tapDiffs.reduce((a, b) => a + b) / tapDiffs.length;
+        const mps = (1.7 * (500 / avg)).toFixed(2); // Normalized to standard 1.7m/s ghost
+        document.getElementById('speed-display').innerText = mps + " m/s";
+      }
+    }
+    lastTap = now;
+  });
+
+  // --- RENDER ---
   function render() {
     const grid = document.getElementById('evidence-grid');
     grid.innerHTML = '';
     evidenceTypes.forEach(e => {
       const btn = document.createElement('button');
-      btn.className = `ev-btn ${state[e] === 1 ? 'found' : state[e] === 2 ? 'ruled' : ''}`;
+      btn.className = `ev-btn ${state.evidence[e] === 1 ? 'found' : state.evidence[e] === 2 ? 'ruled' : ''}`;
       btn.innerText = e;
-      btn.onclick = () => {
-        state[e] = (state[e] + 1) % 3;
-        render();
-      };
+      btn.onclick = () => { state.evidence[e] = (state.evidence[e] + 1) % 3; render(); };
       grid.appendChild(btn);
     });
 
@@ -191,29 +150,23 @@
     ghosts.forEach(g => {
       const span = document.createElement('span');
       span.className = 'ghost';
-      span.innerText = g.name;
-
-      // Filtering Logic
-      let foundMatch = true;
-      let ruledOut = false;
-
-      for (const [ev, val] of Object.entries(state)) {
-        if (val === 1) {
-          // Specific Mimic Logic: Orbs don't rule out Mimic because they are fake
-          if (!g.ev.includes(ev) && !(g.name === "Mimic" && ev === "Ghost Orb")) foundMatch = false;
-        }
-        if (val === 2) {
-          if (g.ev.includes(ev)) ruledOut = true;
-        }
+      let fail = false;
+      for (const [ev, val] of Object.entries(state.evidence)) {
+        if (val === 1 && !g.ev.includes(ev)) fail = true;
+        if (val === 2 && g.ev.includes(ev)) fail = true;
       }
-
-      if (!foundMatch || ruledOut) span.classList.add('impossible');
+      if (fail) span.classList.add('impossible');
+      span.innerText = g.name;
       list.appendChild(span);
     });
   }
 
-  function resetTracker() {
-    evidenceTypes.forEach(e => state[e] = 0);
+  function resetAll() {
+    state.sanity = 100;
+    state.isRunning = false;
+    evidenceTypes.forEach(e => state.evidence[e] = 0);
+    document.getElementById('sanity-display').innerText = "100%";
+    document.getElementById('speed-display').innerText = "--- m/s";
     render();
   }
 
